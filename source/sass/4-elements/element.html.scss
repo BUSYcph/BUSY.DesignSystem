@@ -1,0 +1,32 @@
+/*------------------------------------*\
+		element.page
+\*------------------------------------*/
+
+/**
+ * High-, page-level styling.
+ *
+ * 1. Set the default `font-family`, `font-size` and `line-height` for the entire project,
+ *    sourced from our default variables. The `font-size` is calculated to exist
+ *    in ems, the `line-height` is calculated to exist unitlessly.
+ * 2. Ensure the page always fills at least the entire height of the viewport.
+ * 3. Fonts on OSX will look more consistent with other systems that do not
+ *    render text using sub-pixel anti-aliasing.
+ * 4. Set overflow-x hidden, so using 100vw (on .article__background .e.g.) does not cause
+ *    horizontal scrollbar to appear, when vertical scrollbar is showing
+ */
+html {
+	font-family: $font-primary; /* 1 */
+	font-size: ($base-font-size / 16px) * 1em; /* [1] */
+	background-color: $color-background;
+	color: $color-font-positive;
+	min-height: 100%; /* [2] */
+	-moz-osx-font-smoothing: grayscale; /* [3] */
+	-webkit-font-smoothing: antialiased; /* [3] */
+	overflow-x: hidden; /* [4] */
+}
+
+html.is-locked {
+	@media(max-width: $screen-md) {
+		overflow: hidden;
+	}
+}

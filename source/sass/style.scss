@@ -1,0 +1,155 @@
+/*------------------------------------*\
+		style.scss
+\*------------------------------------*/
+
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Global variables, site-wide settings, config switches, etc.
+ *
+ * Defaults.............Default settings.
+ * Global...............Globally-available variables and settings/config.
+ * Colors...............Manage our color palette in isolation.
+ * Breakpoints..........Set up and name our breakpoints.
+ *
+ *
+ * TOOLS
+ * Site-wide mixins and functions.
+ *
+ * Grid-mixins..........Bootstrap's grid mixins.
+ * Mixins...............Our mixins.
+ *
+ *
+ * GENERIC
+ * Low-specificity, far-reaching rulesets (e.g. resets).
+ *
+ * Normalize.css........A level playing field.
+ * Reset................A pared back reset to remove margins.
+ * Box-sizing...........Better default `box-sizing`.
+ *
+ *
+ * BASE
+ * Unclassed HTML elements (e.g. a {}, blockquote {}, address {}).
+ *
+ * Page.................Page-level styles (HTML element).
+ * Anchor...............Hyperlink styles
+ * Headings.............Heading styles
+ * Images...............inuitcss images
+ * Pararaph.............Paragprah styles
+ * Typography...........Misc type styles
+ *
+ *
+ * OBJECTS
+ * Objects, abstractions, and design patterns (e.g. .media {}).
+ *
+ * Button..............Button object styles.
+ * Icon................Generic icon styles.
+ *
+ *
+ * COMPONENTS
+ * Discrete, complete chunks of UI (e.g. .carousel {}).
+ *
+ * Footer..............Footer component styles.
+ * Logo................Logo styles.
+ * Search..............Search component styles.
+ *
+ *
+ * TRUMPS
+ * High-specificity, very explicit selectors. Overrides and helper classes (e.g. .hidden {}).
+ *
+ * Grid................Bootsrap's Grid and grid related classes.
+ * Show/hide...........Helpers to show and side stuff.
+ */
+
+
+
+
+
+/**
+ * #SETTINGS
+ */
+
+@import "1-settings/settings.breakpoints.scss";
+@import "1-settings/settings.defaults.scss";
+@import "1-settings/settings.colors.brand.scss";
+@import "1-settings/settings.colors.neutral.scss";
+@import "1-settings/settings.colors.generic.scss";
+@import "1-settings/settings.fonts.scss";
+@import "1-settings/settings.bootstrap-variables.scss";
+
+/**
+ * #TOOLS
+ */
+
+@import "2-tools/tools.grid-mixins.scss";
+@import "2-tools/tools.mixins.scss";
+@import "2-tools/tools.bootstrap-mixins.scss";
+
+/**
+ * #GENERIC
+ */
+
+@import "3-generic/generic.normalize.scss";
+@import "3-generic/generic.reset.scss";
+@import "3-generic/generic.box-sizing.scss";
+
+/**
+ * #BASE
+ */
+
+@import "4-elements/element.anchor.scss";
+@import "4-elements/element.blockquote.scss";
+@import "4-elements/element.body.scss";
+@import "4-elements/element.headings.scss";
+@import "4-elements/element.html.scss";
+@import "4-elements/element.images.scss";
+@import "4-elements/element.paragraph.scss";
+@import "4-elements/element.table.scss";
+@import "4-elements/element.typography.scss";
+
+/**
+ * #OBJECTS
+ */
+
+@import "5-objects/object.button.scss";
+@import "5-objects/object.checkbox.scss";
+@import "5-objects/object.icon.scss";
+@import "5-objects/object.iframe.scss";
+@import "5-objects/object.input.scss";
+@import "5-objects/object.link.scss";
+@import "5-objects/object.logo.scss";
+@import "5-objects/object.section.scss";
+@import "5-objects/object.select.scss";
+@import "5-objects/object.site.scss";
+@import "5-objects/object.video.scss";
+
+/**
+ * #ATOMS
+ */
+
+@import "6-atoms/atom.accordion.scss";
+@import "6-atoms/atom.card.scss";
+@import "6-atoms/atom.headings.scss";
+@import "6-atoms/atom.list-item.scss";
+
+/**
+ * #MOLECULES
+ */
+
+//@import "7-molecules/molecule.lists.scss";
+
+/**
+ * #ORGANISMS
+ */
+
+//@import "8-organisms/organism.header.scss";
+//@import "8-organisms/organism.footer.scss";
+
+/**
+ * #TRUMPS
+ */
+ 
+@import "9-trumps/trumps.grid.scss";
+@import "9-trumps/trumps.show-hide.scss";
+@import "9-trumps/trumps.text-align.scss";

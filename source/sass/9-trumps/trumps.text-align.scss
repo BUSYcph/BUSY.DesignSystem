@@ -1,0 +1,22 @@
+/*------------------------------------*\
+		trump.text-align
+\*------------------------------------*/
+
+.u-text {
+	&--left {
+		display: block;
+		text-align: left;
+	}
+	&--center {
+		display: block;
+		text-align: center;
+	}
+	&--right {
+		display: block;
+		text-align: right;
+	}
+	&--justify {
+		display: block;
+		text-align: justify;
+	}
+}

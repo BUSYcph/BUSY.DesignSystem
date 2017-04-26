@@ -1,0 +1,31 @@
+/*------------------------------------*\
+		object.site
+\*------------------------------------*/
+
+.site__section {
+	margin-top: $spacing-unit;
+	padding-top: ($spacing-unit--large * 1.5);
+	padding-bottom: ($spacing-unit--large * 1.5);
+
+	&:first-of-type {
+		margin-top: 0;
+	}
+}
+
+.site__main {
+	@media(max-width: $screen-md) {
+		margin-top: 120px;
+	}
+
+	@media(min-width: $screen-md-min) {
+		padding-top: 355px; // to match warning's top
+	}
+}
+
+/* Use this class for hidden titles to provide structure for HTML document outline */
+.site__outline-title {
+	display: none;
+	@media speech {
+		display: block;
+	}
+}

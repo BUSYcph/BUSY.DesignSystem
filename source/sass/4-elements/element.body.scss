@@ -1,0 +1,13 @@
+/*------------------------------------*\
+		element.body
+\*------------------------------------*/
+
+body {
+	line-height: 1.3; // overwrite setting from generic.reset.less
+}
+
+body.is-locked {
+	@media(max-width: $screen-md) {
+		overflow: hidden;
+	}
+}

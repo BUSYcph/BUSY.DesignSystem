@@ -1,0 +1,35 @@
+/*------------------------------------*\
+		object.blockquote
+    Created by kvr on 13-12-2016
+\*------------------------------------*/
+
+blockquote {
+	margin: ($spacing-unit * 1.5) 0;
+	padding-bottom: 25px;
+
+	position: relative;
+
+	font-family: $font-primary-extrabold;
+	@include font-size-responsive(36px);
+	line-height: $base-line-height--unitless;
+
+	&:before {
+		content: '“';
+		//margin-right: -$spacing-unit--small;
+	}
+
+	&:after {
+		content: '”';
+		//margin-left: -$spacing-unit--small;
+	}
+
+	cite {
+		display: block;
+
+		position: absolute;
+		bottom: 0;
+
+		@include font-size-responsive(16px, 0.9);
+		font-style: italic;
+	}
+}

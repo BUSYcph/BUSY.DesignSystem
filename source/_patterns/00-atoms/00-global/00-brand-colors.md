@@ -1,0 +1,1 @@
+This color palette contains BUSY brand colors to be used throughout the interface.

@@ -1,0 +1,73 @@
+/*------------------------------------*\
+		object.checkbox
+\*------------------------------------*/
+
+.checkbox {
+	position: relative;
+
+	&__field {
+		position:  absolute;
+		left: -2em;
+
+		/* hidden, but not from screenreaders */
+		height: 1px;
+		width: 1px;
+		margin: -1px;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		border: none;
+		opacity: 0;
+		/* hidden */
+
+		&:checked + label {
+
+			&:after{
+				background-color: $color-negative;
+				/*color: $color-negative;*/
+			}
+		}
+	}
+
+	&__label {
+		cursor: pointer;
+		position: relative;
+		padding-left: 1.5em;
+		line-height: 1.3em;
+		user-select: none;
+		display: block;
+		margin-bottom: 7.5px;
+
+		&:before{
+			content: "";
+			display: inline-block;
+			background-color: $color-positive;
+			width: 1.3em;
+			height: 1.3em;
+			left: 0;
+			top:0;
+			position: absolute;
+		}
+
+		&:after{
+			/*content: "\2713";*/
+			content: "";
+			display: inline-block;
+			font-weight: bold;
+			/*color: transparent;*/
+			background-color: transparent;
+			width: .6em;
+			height: .6em;
+			position:  absolute;
+			left: 0;
+			top: 0;
+			line-height: 0.75em;
+
+			/* Use translate to avoid pixel snapping */
+			transform: translate(.35em, .35em);
+			/*transform: translate(.2em, .35em);*/
+		}
+	}
+}
+
+
+// Modifiers

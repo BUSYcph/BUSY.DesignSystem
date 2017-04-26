@@ -1,0 +1,70 @@
+/*------------------------------------*\
+		settings.defaults
+\*------------------------------------*/
+
+// High-level base settings.
+$base-font-size:              18px !default;
+$base-line-height:            24px !default;
+$base-line-height--unitless:  1.15 !default;
+$base-border-radius:          0 !default;
+
+
+
+
+// Font sizes
+$font-unit: 0em !default;
+
+
+
+
+
+// These variables are framework variables, sourced from variables defined
+// above. Feel free to use these variables throughout your project, but do not
+// modify or reassign them.
+$spacing-unit:           $base-line-height !default; // 24px
+$spacing-unit--tiny:     round($spacing-unit / 4) !default; // 6px
+$spacing-unit--small:    round($spacing-unit / 2) !default; // 12px
+$spacing-unit--large:    round($spacing-unit * 2) !default; // 48px
+$spacing-unit--huge:     round($spacing-unit * 4) !default; // 96px
+
+
+
+
+
+// Animation
+$anim-panel-speed: 0.15s !default;
+$anim-panel-curve: ease-out !default;
+$ease-dynamic: cubic-bezier(.86, 0, .07, 1) !default;
+$ease-elastic: cubic-bezier(.77, -0.19, .33, 1.12) !default;
+$ease-elastic-wild: cubic-bezier(.55, 1.55, .39, 1.01) !default;
+
+$anim-fallin-transform-speed: 1s !default;
+$anim-fallin-transform-distance: 15px !default;
+$anim-fallin-opacity-speed: .75s !default;
+$anim-hover-background-speed: .5s !default;
+
+
+//Variables used by multiple components
+$inline-block-gap:            4px !default;
+$section-width:               $screen-lg !default;
+$section-width-sm:            $screen-md !default;
+$section-inner-width:         $screen-md !default;
+
+$section-inner-padding-vert:	$spacing-unit !default;
+//so it matches bootstrap grid gutter on multi-column layouts:
+$section-inner-padding-horiz:	($spacing-unit--small * 1.5) !default;
+
+$content-one-column-width:  	75% !default;
+
+$header-breakpoint:     		  $screen-sm !default;
+$header-breakpoint-min: 		  $screen-sm-min !default;
+$side-panel-position:   		  20% !default;
+
+$contact-list-width:          20px !default;
+$contact-list-gap:            $spacing-unit--small !default;
+
+
+
+
+// Lines and border thickness
+$stroke-thickness:			3px !default;

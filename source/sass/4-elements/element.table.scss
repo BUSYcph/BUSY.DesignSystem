@@ -1,0 +1,14 @@
+/*------------------------------------*\
+		element.table
+    Created by kvr on 14-12-2016
+\*------------------------------------*/
+
+table {
+	width: 100%;
+	max-width: 100%;
+
+	@media (max-width: $screen-xs) {
+		display: block;
+		overflow-x: auto;
+	}
+}

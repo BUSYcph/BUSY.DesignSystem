@@ -1,0 +1,100 @@
+/*------------------------------------*\
+		object.icon
+\*------------------------------------*/
+
+.icon {
+	width: 30px;
+	height: 30px;
+
+	display: inline-block;
+
+	&__asset {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	&--small {
+		width: 20px;
+		height: 20px;
+	}
+
+	&--tiny {
+		width: 15px;
+		height: 15px;
+	}
+}
+
+
+.icon--circle {
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	padding: 10px;
+
+	&.icon--small {
+		width: 30px;
+		height: 30px;
+		padding: 8px;
+	}
+}
+
+.icon--light {
+	fill: $color-negative;
+
+	&.icon--circle {
+		fill: $color-positive;
+		background-color: $color-negative;
+	}
+}
+
+.icon--dark {
+	fill: $color-positive;
+
+	&.icon--circle {
+		fill: $color-negative;
+		background-color: $color-positive;
+	}
+
+}
+
+.icon--neutral {
+	fill: $color-positive;
+
+	&.icon--circle {
+		background-color: $color-background;
+	}
+
+}
+
+.icon--interactive-hard {
+	transition: background $anim-hover-background-speed;
+
+	&.icon--circle {
+
+		&.icon--dark:hover {
+			background-color: lighten($color-positive, 30%);
+		}
+		
+		&.icon--light:hover {
+			background-color: darken($color-negative, 20%);
+		}
+
+	}
+}
+
+.icon--interactive-subtle {
+	transition: background $anim-hover-background-speed;
+
+	&.icon--circle {
+
+		&.icon--dark:hover {
+			background-color: lighten($color-positive, 20%);
+		}
+		
+		&.icon--light:hover {
+			background-color: darken($color-negative, 10%);
+		}
+
+	}
+}

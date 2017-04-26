@@ -1,0 +1,42 @@
+/*------------------------------------*\
+		settings.colors.generic
+\*------------------------------------*/
+
+$color-background: $color-neutral-white !default;
+
+$color-negative: $color-neutral-white !default;
+$color-positive: $color-neutral-black !default;
+
+$color-primary: $color-neutral-white !default;
+$color-primary-hover: darken($color-primary, 10%) !default;
+$color-primary-active: $color-neutral-black !default;
+
+$color-secondary: $color-neutral-black !default;
+$color-secondary-hover: lighten($color-neutral-black, 10%) !default;
+$color-secondary-active: $color-neutral-white !default;
+
+$color-tertiary: darken($color-brand-casal, 10%) !default;
+
+$color-tertiary-hover: #c6c6c6 !default;
+$color-tertiary-active: $color-neutral-black !default;
+
+$color-accent: red !default; // TODO: change to $color-utility-emphasized 
+$color-accent-hover: #c6c6c6 !default;
+$color-tertiary-active: $color-neutral-black !default;
+
+$color-font-negative: color-neutral-white !default;
+$color-font-positive: lighten($color-neutral-black, 30%) !default;
+$color-font-disabled: lighten($color-neutral-black, 70%) !default;
+$color-font-faded:    lighten($color-neutral-black, 30%) !default;
+
+$color-warning: darken($color-accent, 10%) !default; //#d1a500
+$color-warning: $color-accent !default;
+$color-success: $color-brand-casal !default;
+
+$color-link: darken($color-brand-casal, 10%) !default; // was originally #36839e but changed for WCAG compatibility
+$color-link-hover: darken($color-link, 20%) !default;
+
+$color-table-header: #acacac !default;
+$color-table-border: #dfdfdf !default;
+$color-table-border-dark: #959595 !default;
+$color-title-bar-border: #c2c2c2 !default;

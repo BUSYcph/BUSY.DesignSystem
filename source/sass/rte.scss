@@ -1,0 +1,104 @@
+/*------------------------------------*\
+		rte.less
+\*------------------------------------*/
+
+/**
+ * Rich text editor related style imports
+*/
+
+
+/**
+ * #SETTINGS
+ */
+@import "1-settings/settings.defaults.less";
+@import "1-settings/settings.colors.less";
+@import "1-settings/settings.fonts.less";
+@import "1-settings/settings.breakpoints.less";
+@import "1-settings/settings.bootstrap-variables.less";
+
+
+
+
+
+/**
+ * #TOOLS
+ */
+@import "2-tools/tools.grid-mixins.less";
+@import "2-tools/tools.mixins.less";
+
+
+
+
+
+/**
+ * #BASE
+ */
+@import "4-elements/element.anchor.less";
+@import "4-elements/element.blockquote.less";
+@import "4-elements/element.body.less";
+@import "4-elements/element.headings.less";
+@import "4-elements/element.html.less";
+@import "4-elements/element.images.less";
+@import "4-elements/element.paragraph.less";
+@import "4-elements/element.table.less";
+@import "4-elements/element.typography.less";
+
+
+
+
+
+/**
+ * #RTE elements
+ */
+ul {
+	margin: $spacing-unit 0;
+	padding-left: $spacing-unit;
+	list-style: disc;
+}
+
+ol {
+	margin: $spacing-unit 0;
+	padding-left: 15px;
+	list-style: decimal;
+}
+
+li {
+	margin-top: $spacing-unit--tiny;
+}
+
+
+// Table styling
+table {
+	margin-bottom: $spacing-unit;
+}
+
+tr {
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+th,
+td {
+	padding: $spacing-unit $spacing-unit--tiny;
+	text-align: left;
+
+	&:first-child {
+		padding-left: $spacing-unit;
+	}
+}
+th {
+	font-family: $font-primary-extrabold;
+	vertical-align: bottom;
+}
+td {
+	vertical-align: top;
+}
+
+
+
+
+
+/**
+ * #TRUMPS
+ */
+@import "9-trumps/trumps.text-align.less";

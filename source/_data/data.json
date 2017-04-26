@@ -1,0 +1,301 @@
+{
+  "pageHeader": {
+    "heading" : "Lorem Ipsum"
+  },
+  "headerImage": {
+    "mobileImage" : "http://placehold.it/1200x600",
+    "desktopImage" : "http://placehold.it/1200x600",
+    "altText": "Image from placehold.it"
+  },
+  "subHeader": {
+    "heading" : "Dolor sit amet"
+  },
+  "paragraph": "Etiam placerat turpis enim, vel porttitor ipsum venenatis eu. Phasellus efficitur iaculis ipsum vitae vulputate.",
+  "articleContent": [
+    { "paragraph": "Etiam placerat turpis enim, vel porttitor ipsum venenatis eu. Phasellus efficitur iaculis ipsum vitae vulputate." },
+    { "paragraph": "Nunc scelerisque rutrum ullamcorper. Nunc sit amet fringilla velit, sit amet mattis diam. Proin congue imperdiet sollicitudin. Sed sagittis at quam a dignissim. In convallis diam nisl, sit amet euismod nulla elementum eu. Mauris ac elementum tortor, ut interdum ex. Aenean eu felis non velit tempor feugiat in vitae magna." },
+    { "paragraph": "Quisque eleifend sem orci, ut molestie elit porta a. Sed vitae dignissim elit. Pellentesque suscipit leo et ultricies eleifend. Etiam interdum mollis felis eu malesuada." }
+  ],
+  "primaryNavigation": [
+    {
+			"url": "#",
+			"caption": "Lorem ipsum"
+		},
+    {
+			"url": "#",
+			"caption": "Dolor sit amet"
+		},
+		{
+			"url": "#",
+			"caption": "Mauris dapibus"
+		}
+  ],
+  "cards": [
+    {
+      "url": "#",
+      "mobileImage": "http://placehold.it/1200x600",
+      "desktopImage": "http://placehold.it/1200x600",
+      "heading": "Lorem Ipsum",
+      "altText": "Image from placehold.it"
+    }
+  ],
+  "cardRows": [
+    { "cardColumns": [
+      {
+        "cards": [
+          {
+            "url": "#",
+            "mobileImage": "http://placehold.it/1200x600",
+            "desktopImage": "http://placehold.it/1200x600",
+            "heading": "Lorem Ipsum",
+            "altText": "Image from placehold.it"
+          },
+          {
+            "url": "#",
+            "mobileImage": "http://placehold.it/1200x600",
+            "desktopImage": "http://placehold.it/1200x600",
+            "heading": "Dolor Sit Amet",
+            "altText": "Image from placehold.it"
+          }
+        ]
+      },
+      {
+        "cards": [
+          {
+            "url": "#",
+            "mobileImage": "http://placehold.it/1200x600",
+            "desktopImage": "http://placehold.it/1200x600",
+            "heading": "Consectetur Adipiscing Elit",
+            "altText": "Image from placehold.it"
+          },
+          {
+            "url": "#",
+            "mobileImage": "http://placehold.it/1200x600",
+            "desktopImage": "http://placehold.it/1200x600",
+            "heading": "Mauris dapibus",
+            "altText": "Image from placehold.it"
+          }
+        ]
+      }
+    ]}
+  ],
+  "listSubjects": [
+      {
+      "title": "Lorem ipsum",
+      "paragraph": "Quisque vel risus rutrum, sollicitudin lorem sagittis, volutpat risus.",
+      "url": "#",
+      "caption": "Dolor sit amet"
+    },
+        {
+      "title": "Lorem ipsum",
+      "paragraph": "Quisque vel risus rutrum, sollicitudin lorem sagittis, volutpat risus.",
+      "url": "#",
+      "caption": "Dolor sit amet"
+    },
+    {
+      "title": "Lorem ipsum",
+      "paragraph": "Quisque vel risus rutrum, sollicitudin lorem sagittis, volutpat risus.",
+      "url": "#",
+      "caption": "Dolor sit amet"
+    }
+  ],
+  "linkLists": [
+    {
+      "heading" : "Lorem Ipsum Dolor",
+      "links": [
+        { 	
+          "caption": "Donec ut lacus", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Cras facilisis", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Nam porttitor nisl sodales", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Curabitur tincidunt tellus", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Aliquam fermentum", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Donec laoreet turpis", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Nulla non nunc", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Mauris nec interdum", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Vestibulum vestibulum", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Donec congue dolor", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Pellentesque", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Proin dapibus", 
+          "url": "#" 
+        }
+      ]
+    },
+    {
+      "heading" : "Donec ut lacus",
+      "links": [
+        { 	
+          "caption": "Cras facilisis", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Nam porttitor nisl sodales", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Curabitur tincidunt tellus", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Aliquam fermentum", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Donec laoreet turpis", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Nulla non nunc", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Mauris nec interdum", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Vestibulum vestibulum", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Donec congue dolor", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Pellentesque", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Proin dapibus", 
+          "url": "#" 
+        }
+      ]
+    },
+    {
+      "heading" : "Pellentesque",
+      "links": [
+        { 	
+          "caption": "Mauris nec interdum", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Vestibulum vestibulum", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Donec congue dolor", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Pellentesque", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Proin dapibus", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Cras facilisis", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Nam porttitor nisl sodales", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Curabitur tincidunt tellus", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Aliquam fermentum", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Donec laoreet turpis", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Nulla non nunc", 
+          "url": "#" 
+        }
+      ]
+    },
+    {
+      "heading" : "Aliquam fermentum",
+      "links": [
+        { 	
+          "caption": "Donec congue dolor", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Pellentesque", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Proin dapibus", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Cras facilisis", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Curabitur tincidunt tellus", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Aliquam fermentum", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Donec laoreet turpis", 
+          "url": "#" 
+        }
+      ]
+    },
+    {
+      "heading" : "Proin dapibus",
+      "links": [
+        { 	
+          "caption": "Cras facilisis", 
+          "url": "#" 
+        },
+        { 	
+          "caption": "Curabitur tincidunt tellus", 
+          "url": "#" 
+        }
+      ]
+    }
+  ]
+}

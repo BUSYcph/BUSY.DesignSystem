@@ -1,0 +1,46 @@
+/*------------------------------------*\
+		object.link
+\*------------------------------------*/
+
+.link {
+	color: $color-positive;
+	&--underline {
+		text-decoration: underline;
+	}
+}
+
+// Modifiers
+.link--uppercase {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.link--dark {
+	color: $color-secondary;
+
+	&:hover {
+		color: $color-secondary;
+	}
+}
+
+.link--light {
+	color: $color-primary;
+
+	&:hover {
+		color: $color-primary;
+	}
+}
+
+.link--icon {
+	padding-right: $spacing-unit;
+	position: relative;
+
+	.icon {
+		position: absolute;
+		transform: translateY(-50%);
+		top: 50%;
+		right: 0;
+		width: 15px;
+		height: 15px;
+	}
+}

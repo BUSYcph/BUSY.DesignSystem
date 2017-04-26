@@ -1,0 +1,160 @@
+/*------------------------------------*\
+		tools.mixins
+    Created by kvr on 07-04-2016
+\*------------------------------------*/
+
+// Create a fully formed type sizing by passing in a single value, e.g.:
+
+// .foo {
+//    @include font-size(12px);
+// }
+//
+// This will yield:
+//
+// .foo {
+//     font-size: 12px;
+//     font-size: 0.75rem;
+// }
+
+@mixin font-size($font-size) {
+	font-size: $font-size;
+	font-size: ($font-size / $base-font-size) * 1rem;
+}
+
+
+
+
+
+// Create a fully formed, responsive type sizing by passing in a font-size value
+// And optionally changing the ratio and/or media query, e.g.:
+
+// .foo {
+//    @include font-size-responsive(16px);
+// }
+//
+// This will yield:
+//
+// .foo {
+//     font-size: 16px;
+//     font-size: 1rem;
+//
+//     @media screen($screen-sm) {
+//        font-size: 13px;
+//        font-size: 0.8125rem;
+//     }
+// }
+
+@mixin font-size-responsive($font-size, $ratio: 0.8125, $mq: $screen-sm) {
+	font-size: $font-size;
+	font-size: ($font-size / $base-font-size) * 1rem;
+
+	@media (max-width: $mq) {
+		font-size: ($font-size * $ratio);
+		font-size: (($font-size * $ratio) / $base-font-size) * 1rem;
+	}
+}
+
+
+
+
+
+// Text-ellipsis
+
+@mixin text-ellipsis($font-size, $line-height, $lines-to-show) {
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  max-height: ($font-size * $line-height * $lines-to-show); /* Fallback for non-webkit */
+  font-size: $font-size;
+  line-height: $line-height;
+  -webkit-line-clamp: $lines-to-show;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+
+
+// Breaks word when viewport is not wide enough
+
+@mixin break-word() {
+	word-break: break-all;
+	word-break: break-word;
+	hyphens: auto;
+}
+
+
+
+
+
+// Bootstrap helper mixins
+@mixin responsive-visibility($parent) {
+  #{$parent} {
+    display: block !important;
+  }
+  table#{$parent}  { display: table !important; }
+  tr#{$parent}     { display: table-row !important; }
+  th#{$parent},
+  td#{$parent}     { display: table-cell !important; }
+}
+
+// [converter] $parent hack
+@mixin responsive-invisibility($parent) {
+  #{$parent} {
+    display: none !important;
+  }
+}
+
+
+
+
+
+// Clearfix
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+//
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content: " "; // 1
+		display: table; // 2
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+
+
+
+// Style placeholder with cross-browser prefixes
+
+@mixin input-placeholder($color, $size: $base-font-size) {
+	&::-webkit-input-placeholder {
+		color: $color;
+		font-size: $size;
+	}
+	&:-moz-placeholder {
+		color: $color;
+		opacity: 1;
+		font-size: $size;
+	}
+	&::-moz-placeholder {
+		color: $color;
+		opacity: 1;
+		font-size: $size;
+	}
+	&:-ms-input-placeholder {
+		color: $color;
+		font-size: $size;
+	}
+}

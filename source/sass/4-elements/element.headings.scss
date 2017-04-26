@@ -1,0 +1,32 @@
+/*------------------------------------*\
+		element.headings
+\*------------------------------------*/
+
+/**
+ * Headings 1–6.
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $font-primary-extrabold;
+	line-height: $base-line-height--unitless;
+}
+
+h1 {
+	@include font-size-responsive(60px, 0.6);
+	margin-top: $spacing-unit;
+	margin-bottom: $spacing-unit--large;
+}
+
+h2 {
+	margin-bottom: 15px;
+	@include font-size-responsive(30px);
+}
+
+h3 {
+	@include font-size-responsive(24px);
+}

@@ -1,0 +1,69 @@
+{
+	"type": "FeatureCollection",
+	"customFeatures": [
+		{
+			"id": 0,
+			"type": "Feature",
+			"properties": {
+				"title": "This is a circle",
+				"text": "It's all round and stuff",
+				"link": "#gosomewhere"
+			},
+			"geometry": {
+				"type": "Circle",
+				"coordinates":[
+					[54.664537, 11.733383]
+				],
+				"radius": 25000
+			}
+		},
+		{
+			"id": 1,
+			"type": "Feature",
+			"properties": {
+				"title": "This is a marker",
+				"text": "It just marks the spot",
+				"link": "#gosomewhere"
+			},
+			"geometry": {
+				"type": "Marker",
+				"coordinates":[
+					[54.664537, 11.733383]
+				]
+			}
+		},
+		{
+			"id": 2,
+			"type": "Feature",
+			"properties": {
+				"title": "This is a polyline",
+				"text": "It shows you the path",
+				"link": "#gosomewhere"
+			},
+			"geometry": {
+				"type": "Polyline",
+				"coordinates":[
+					[54.790393,11.520538], [54.781682,11.482086], [54.774554,11.466980], [54.759501,11.460114],	[54.752369,11.460114],
+					[54.746028,11.449127], [54.738893,11.440887], [54.724620,11.432648], [54.711929,11.423035],	[54.695265,11.410675],
+					[54.680183,11.396942], [54.662712,11.362610], [54.653180,11.344757], [54.503542,11.223907], [54.490782,11.218414],
+					[54.470038,11.201935], [54.452477,11.177216], [54.438103,11.153870], [54.430115,11.133270], [54.407742,11.114044]
+				]
+			}
+		},
+		{
+			"id": 3,
+			"type": "Feature",
+			"properties": {
+				"title": "This is a polygon",
+				"text": "Dont swing from this trapez",
+				"link": "#gosomewhere"
+			},
+			"geometry": {
+				"type": "Polygon",
+				"coordinates":[
+					[54.670257,11.341324], [54.624966,11.280899], [54.606278,11.346817], [54.657946,11.379776]
+				]
+			}
+		}
+	]
+}

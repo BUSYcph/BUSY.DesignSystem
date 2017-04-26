@@ -1,0 +1,175 @@
+// Gutter
+$gutter: 30px !default;
+$grid-gutter-width:         30px !default;
+//** Number of columns in the grid.
+$grid-columns:              12 !default;
+
+
+
+
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+//** Background color for `<body>`.
+$body-bg:               $color-background !default;
+//** Global text color on `<body>`.
+$text-color:            $color-font-positive !default;
+
+//** Global textual link color.
+$link-color:            $color-link !default;
+//** Link hover color set via `darken()` function.
+$link-hover-color:      $color-link-hover !default;
+//** Link hover decoration.
+$link-hover-decoration: none !default;
+
+
+
+
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+$padding-base-vertical:     6px !default;
+$padding-base-horizontal:   12px !default;
+
+$padding-large-vertical:    10px !default;
+$padding-large-horizontal:  16px !default;
+
+$padding-small-vertical:    5px !default;
+$padding-small-horizontal:  10px !default;
+
+$padding-xs-vertical:       1px !default;
+$padding-xs-horizontal:     5px !default;
+
+$line-height-large:         1.3333333 !default; // extra decimals for Win 8.1 Chrome
+$line-height-small:         1.5 !default;
+
+$border-radius-base:        $base-border-radius !default;
+$border-radius-large:       $base-border-radius !default;
+$border-radius-small:       $base-border-radius !default;
+
+//** Global color for active items (e.g., navs or dropdowns).
+$component-active-color:    $color-negative !default;
+//** Global background color for active items (e.g., navs or dropdowns).
+$component-active-bg:       $color-positive !default;
+
+//** Width of the `border` for generating carets that indicate dropdowns.
+$caret-width-base:          4px !default;
+//** Carets increase slightly in size for larger components.
+$caret-width-large:         5px !default;
+
+
+
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:  $font-primary !default;
+$font-family-base:        $font-family-sans-serif !default;
+
+$font-size-base:          $base-font-size !default;
+$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+
+$font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
+$font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
+$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
+$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h5:            $font-size-base !default;
+$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        $base-line-height--unitless !default;
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+//** By default, this inherits from the `<body>`.
+//$headings-font-family:    inherit !default;
+//$headings-font-weight:    800 !default;
+//$headings-line-height:    1.15 !default;
+//$headings-color:          inherit !default;
+
+
+
+
+
+//== Forms
+//
+//##
+
+//** `<input>` background color
+$input-bg:                       $color-positive !default;
+//** `<input disabled>` background color
+$input-bg-disabled:              fade($color-positive, 50%) !default;
+
+//** Text color for `<input>`s
+$input-color:                    $color-negative !default;
+//** `<input>` border color
+$input-border:                   transparent !default;
+
+// TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
+//** Default `.form-control` border radius
+// This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
+$input-border-radius:            $base-border-radius !default;
+//** Large `.form-control` border radius
+$input-border-radius-large:      $base-border-radius !default;
+//** Small `.form-control` border radius
+$input-border-radius-small:      $base-border-radius !default;
+
+//** Border color for inputs on focus
+$input-border-focus:             #66afe9 !default;
+
+//** Placeholder text color
+$input-color-placeholder:        $color-font-disabled !default;
+
+//** Default `.form-control` height
+//$input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + 2) !default;
+$input-height-base:              50px !default;
+//** Large `.form-control` height
+$input-height-large:             (ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2) !default;
+//** Small `.form-control` height
+$input-height-small:             (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2) !default;
+
+//** `.form-group` margin
+$form-group-margin-top:          ($spacing-unit * 1.5) !default;
+$form-group-margin-bottom:       ($spacing-unit * 1.5) !default;
+
+$legend-color:                   $color-font-positive !default;
+$legend-border-color:            $color-positive !default;
+
+//** Background color for textual input addons
+$input-group-addon-bg:           $color-font-positive !default;
+//** Border color for textual input addons
+$input-group-addon-border-color: $input-border !default;
+
+//** Disabled cursor for form controls and buttons.
+$cursor-disabled:                not-allowed !default;
+
+
+
+
+
+//== Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+
+// $state-success-text:             $color-positive !default;
+// $state-success-bg:               #dff0d8 !default;
+// $state-success-border:           darken(spin($state-success-bg, -10), 5%) !default;
+
+// $state-info-text:                #31708f !default;
+// $state-info-bg:                  #d9edf7 !default;
+// $state-info-border:              darken(spin($state-info-bg, -10), 7%) !default;
+
+// $state-warning-text:             #8a6d3b !default;
+// $state-warning-bg:               #fcf8e3 !default;
+// $state-warning-border:           darken(spin($state-warning-bg, -10), 5%) !default;
+
+// $state-danger-text:              $color-positive !default;
+// $state-danger-bg:                #f2dede !default;
+// $state-danger-border:            darken(spin($state-danger-bg, -10), 5%) !default;

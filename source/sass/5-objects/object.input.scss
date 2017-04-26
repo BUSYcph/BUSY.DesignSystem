@@ -1,0 +1,35 @@
+/*------------------------------------*\
+		object.button
+\*------------------------------------*/
+
+.form-field {
+	&__label {
+		font-family: $font-primary-extrabold;
+		color: $color-brand-casal; // TODO: change - shouldn't be brand colors down here
+	}
+
+	&__required {
+		color: $color-brand-casal; // TODO: change - shouldn't be brand colors down here
+	}
+
+	&__input {
+		font-family: $font-primary-extrabold;
+		@include font-size-responsive(18px);
+		text-decoration: none;
+		color: inherit;
+
+		padding: $spacing-unit;
+		background-color: inherit;
+		border: none;
+		border-radius: 0;
+		width: 100%;
+
+		&::placeholder {
+			color: $color-font-disabled;
+		}
+	}
+
+	&__note {
+		font-family: $font-primary;
+	}
+}
