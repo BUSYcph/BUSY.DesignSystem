@@ -1,0 +1,13 @@
+<div class="message {{ styleModifier }}
+    {{# isLoading }} message--loading{{/ isLoading }}
+    {{# isRecipient }} message--recipient{{/ isRecipient }}
+    {{^ isRecipient }} message--sender{{/ isRecipient }}
+">
+    {{message}}
+
+    {{# isLoading }}
+        <span></span>
+        <span></span>
+        <span></span>
+    {{/ isLoading }}
+</div>

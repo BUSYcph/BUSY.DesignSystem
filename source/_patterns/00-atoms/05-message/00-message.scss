@@ -1,0 +1,84 @@
+.message {
+  max-width: 70%;
+  word-wrap: break-word;
+  margin-bottom: 20px;
+  line-height: 24px;
+  border-radius: 3px;
+  box-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+  padding: 6px 12px;
+  text-align: left;
+  display: inline-block;
+}
+
+.message--sender {
+  color: $color-neutral-white;
+  background: $color-brand-casal;
+}
+
+.message--recipient {
+  background:$color-neutral-very-light-grey;
+  color: $color-neutral-black;
+}
+
+.message--messenger {
+  animation-delay: inherit;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.68, 0.01, 0.245, 1.13);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.message--messenger.message--sender {
+  animation-name: appearFromRight;
+  transform: translate3d(+110%, 0, 0);
+  opacity: 0;
+}
+
+.message--messenger.message--recipient {
+  animation-name: appearFromLeft;
+  transform: translate3d(-110%, 0, 0);
+  opacity: 0;
+}
+
+.message--loading span{
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: $color-neutral-light-grey;
+  transform: translateY(2px);
+}
+
+.message--loading span:nth-child(1){
+  animation: bounce 0.8s ease-in-out infinite,
+            fadeALittle 0.8s ease-in-out infinite;
+}
+
+.message--loading span:nth-child(2){
+  animation: bounce 0.8s ease-in-out 0.33s infinite,
+    fadeALittle 0.8s ease-in-out 0.33s infinite;
+}
+
+.message--loading span:nth-child(3){
+  animation: bounce 0.8s ease-in-out 0.66s infinite,
+    fadeALittle 0.8s ease-in-out 0.33s infinite;
+}
+
+@keyframes fadeALittle {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: .5;
+    }
+}
+
+@keyframes bounce{
+  0%, 75%, 100%{
+    transform: translateY(2px);
+  }
+
+  25%{
+    transform: translateY(-6px);
+  }
+}

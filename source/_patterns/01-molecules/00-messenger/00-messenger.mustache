@@ -1,0 +1,7 @@
+<ol class="messenger">
+    {{# messages }}
+    <li class="messenger__line {{^ isRecipient }} u-text--right{{/ isRecipient }}">
+        {{> atoms-message:message--messenger }}     
+    </li>
+    {{/ messages }}
+</ol>

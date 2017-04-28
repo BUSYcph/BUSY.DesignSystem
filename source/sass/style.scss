@@ -112,6 +112,7 @@
  * #OBJECTS
  */
 
+@import "5-objects/object.animations.scss";
 @import "5-objects/object.button.scss";
 @import "5-objects/object.checkbox.scss";
 @import "5-objects/object.icon.scss";
@@ -132,12 +133,13 @@
 @import "6-atoms/atom.card.scss";
 @import "6-atoms/atom.headings.scss";
 @import "6-atoms/atom.list-item.scss";
+@import "../_patterns/00-atoms/05-message/00-message.scss";
 
 /**
  * #MOLECULES
  */
 
-//@import "7-molecules/molecule.lists.scss";
+@import "7-molecules/molecule.messenger.scss";
 
 /**
  * #ORGANISMS
