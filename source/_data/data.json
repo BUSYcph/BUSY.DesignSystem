@@ -10,7 +10,13 @@
   "subHeader": {
     "heading" : "Dolor sit amet"
   },
+  "heading1": "Lorem Ipsum Dolor sit amet",
+  "heading2": "Lorem Ipsum Dolor sit amet",
+  "heading3": "Lorem Ipsum Dolor sit amet",
+  "heading4": "Lorem Ipsum Dolor sit amet",
   "paragraph": "Etiam placerat turpis enim, vel porttitor ipsum venenatis eu. Phasellus efficitur iaculis ipsum vitae vulputate.",
+  "buttonLabel": "Lorem",
+  "buttonLabelHovered": "Ipsum",
   "messages": [
     {
       "isLoading" : false,

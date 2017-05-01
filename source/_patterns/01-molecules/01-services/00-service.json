@@ -1,0 +1,18 @@
+{
+    "heading1": "Lorem ipsum",
+    "description": [
+        { 
+            "paragraph": "Quisque pulvinar nunc eu massa congue dignissim. Aenean ultrices sit amet ligula et venenatis. Cras in consectetur est."
+        },
+        { 
+            "paragraph": "Suspendisse sapien felis, convallis ac mauris sit amet, tempor cursus metus. Phasellus id dictum nibh, quis mollis lorem. Curabitur hendrerit enim fringilla, tempus metus eget, imperdiet nunc."
+        },
+        { 
+            "paragraph": "Nam tincidunt libero nec lacus placerat tincidunt. Maecenas a augue a enim vestibulum tristique in eget quam. Aliquam erat volutpat."
+        }
+    ],
+    "cta": {
+        "buttonLabel": "Lorem",
+        "buttonLabelHovered": "Ipsum"
+    }
+}

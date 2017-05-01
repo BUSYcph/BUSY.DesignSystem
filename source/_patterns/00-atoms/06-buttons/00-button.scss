@@ -1,0 +1,44 @@
+.a-button {
+    display: block;
+    width:200px;
+    height:60px;
+    cursor:pointer;
+    perspective:500px;
+    -webkit-perspective:500px;
+}
+.a-button .a-button__wrapper {
+    height:100%;
+    transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+    transition:0.25s;
+    -webkit-transition:0.25s;
+}
+
+.a-button:hover .a-button__wrapper {
+    transform:rotateX(-90deg);
+}
+
+.a-button__face {
+    width:100%;
+    height:100%;
+    position:absolute;
+    box-sizing:border-box;
+    border:5px solid $color-brand-casal; // TODO: adjust pixel width to variable
+    font-family: $font-primary;
+    line-height:50px;
+    font-size:17pt;
+    text-align:center;
+    text-transform:uppercase;
+}
+.a-button__face--front {
+    color: $color-brand-casal;
+    transform: translate3d(0, 0, 30px);
+    -webkit-transform: translate3d(0, 0, 30px);
+
+}
+.a-button__face--hovered {
+    color: $color-neutral-white;
+    background: $color-brand-casal;
+    transform: rotateX(90deg) translate3d(0, 0, 30px);
+    -webkit-transform: rotateX(90deg) translate3d(0, 0, 30px);
+}

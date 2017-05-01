@@ -306,7 +306,7 @@ function watch() {
     },
     {
       name: 'SASS',
-      paths: [normalizePath(paths().source.sass, '**', '*.scss')],
+      paths: [normalizePath(paths().source.sass, '**', '*.scss'),normalizePath(paths().source.patterns, '**', '*.scss')],
       config: { awaitWriteFinish: true },
       tasks: gulp.series('pl-sass', reloadCSS)
     },

@@ -1,28 +1,4 @@
-@font-face{
-    font-family: "Linotype Didot";
-    src:url("../fonts/6adf1098-6e5c-458f-a68a-2de77db01a73.eot?#iefix");
-    src:url("../fonts/6adf1098-6e5c-458f-a68a-2de77db01a73.eot?#iefix") format("eot"),url("../fonts/5cc88c79-07f5-4dc3-808c-0a24f606acff.woff2") format("woff2"),url("../fonts/8c847ae1-0c02-4e9a-9203-c294e4a23fe1.woff") format("woff"),url("../fonts/bae6ce0f-deaf-4f99-bdf6-de7f2cf54d04.ttf") format("truetype"),url("../fonts/d62df477-3d45-4345-95a9-eac5dcd4b116.svg#d62df477-3d45-4345-95a9-eac5dcd4b116") format("svg");
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face{
-    font-family: "Foundry Monoline 400";
-    src:url("../fonts/4b6d6266-30ee-47b2-a404-bb603144874a.eot?#iefix");
-    src:url("../fonts/4b6d6266-30ee-47b2-a404-bb603144874a.eot?#iefix") format("eot"),url("../fonts/343c931d-1f3d-444a-bce1-f3ed83e9f245.woff2") format("woff2"),url("../fonts/e089faeb-6b44-4090-91fc-906aec84c145.woff") format("woff"),url("../fonts/f8442798-2748-4a31-8299-5caeb1d86ae8.ttf") format("truetype"),url("../fonts/645ea3f9-ae25-4f5d-90f8-8bc49ff78f6d.svg#645ea3f9-ae25-4f5d-90f8-8bc49ff78f6d") format("svg");
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face{
-    font-family: "Foundry Monoline 700";
-    src:url("../fonts/573518d9-2907-46cb-b342-63e5013ce983.eot?#iefix");
-    src:url("../fonts/573518d9-2907-46cb-b342-63e5013ce983.eot?#iefix") format("eot"),url("../fonts/bad05f96-5196-4e32-ba19-fd8a9cb00b7e.woff2") format("woff2"),url("../fonts/c9f7fefc-34c7-437e-bbf0-664b1258bd0a.woff") format("woff"),url("../fonts/6a857bd5-3b67-42f6-b198-6a41d306d903.ttf") format("truetype"),url("../fonts/cb6f1a52-d6eb-413d-87c2-5020e97e5fe7.svg#cb6f1a52-d6eb-413d-87c2-5020e97e5fe7") format("svg");
-    font-weight: 700;
-    font-style: normal;
-}
-
-$font-primary:             "Foundry Monoline 400", sans-serif;
-$font-primary-extrabold:   "Foundry Monoline 700", sans-serif;
-$font-secondary:           "Linotype Didot", sans-serif;
+$font-primary:             "Hind", sans-serif;
+$font-primary-extrabold:   "Hind", sans-serif;
+$font-secondary:           "Hind", sans-serif;
  
