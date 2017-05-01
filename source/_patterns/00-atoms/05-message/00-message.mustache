@@ -2,8 +2,8 @@
     {{# isLoading }} message--loading{{/ isLoading }}
     {{# isRecipient }} message--recipient{{/ isRecipient }}
     {{^ isRecipient }} message--sender{{/ isRecipient }}
-">
-    {{message}}
+" data-message="{{message}}" data-component="message" data-message-id="{{id}}">
+    <noscript>{{message}}</noscript>
 
     {{# isLoading }}
         <span></span>

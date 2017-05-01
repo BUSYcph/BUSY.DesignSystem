@@ -19,14 +19,76 @@
   "buttonLabelHovered": "Ipsum",
   "messages": [
     {
+      "id": 1,
       "isLoading" : false,
       "isRecipient": false,
       "message": "Hej og velkommen til BUSY"
     },
     {
+      "id": 2,
       "isLoading" : false,
       "isRecipient": true,
-      "message": "Tak... hvad er busy?"
+      "message": "Tak... hvad er BUSY?"
+    },
+    {
+      "id": 3,
+      "isLoading" : false,
+      "isRecipient": false,
+      "message": "BUSY er specialist i helstøbte og værdifokuserede brugergrænseflader til web og apps"
+    },
+    {
+      "id": 4,
+      "isLoading" : false,
+      "isRecipient": true,
+      "message": "Men... er det ikke bare udvikling af HTML, CSS og JavaScript?"
+    },
+    {
+      "id": 5,
+      "isLoading" : false,
+      "isRecipient": false,
+      "message": "Joh... Det er det også."
+    },
+    {
+      "id": 6,
+      "isLoading" : false,
+      "isRecipient": false,
+      "message": "De nævnte elementer er midler til at nå et mål."
+    },
+    {
+      "id": 7,
+      "isLoading" : false,
+      "isRecipient": false,
+      "message": "Et mål om at kunne fungere på et væld af forskellige skærmstørrelser og på tværs af mange kanaler."
+    },
+    {
+      "id": 8,
+      "isLoading" : false,
+      "isRecipient": false,
+      "message": "Og om at formidle dit brands særlige følelse og budskab."
+    },
+    {
+      "id": 9,
+      "isLoading" : false,
+      "isRecipient": false,
+      "message": "Om at være synlig på søgemaskiner og for mennesker med handicap."
+    },
+    {
+      "id": 10,
+      "isLoading" : false,
+      "isRecipient": false,
+      "message": "Og, at det hele på én gang skal være realiserbart i teknisk forstand."
+    },
+    {
+      "id": 11,
+      "isLoading" : false,
+      "isRecipient": false,
+      "message": "Alt sammen væsentlige udfordringer der kræver specialistviden og erfaring at udføre korrekt."
+    },
+    {
+      "id": 12,
+      "isLoading" : false,
+      "isRecipient": false,
+      "message": "Det er dét BUSY kan hjælpe dig og din forretning med!"
     }
   ]
 }

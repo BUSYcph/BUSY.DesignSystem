@@ -1,6 +1,6 @@
-<ol class="messenger">
+<ol class="m-messenger" data-component="messenger">
     {{# messages }}
-    <li class="messenger__line {{^ isRecipient }} u-text--right{{/ isRecipient }}">
+    <li class="m-messenger__line m-messenger__line--auto-animate {{^ isRecipient }} u-text--right{{/ isRecipient }}">
         {{> atoms-message:message--messenger }}     
     </li>
     {{/ messages }}

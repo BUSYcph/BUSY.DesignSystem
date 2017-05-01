@@ -1,1 +1,0 @@
-A heading-molecule is a heading that resides inside most molecules. By making it a partial includable atom, we'll make these headings as uniform as possible. It's the containing elements´ job to position it correctly inside its´ residing context.

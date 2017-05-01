@@ -296,6 +296,11 @@ function reloadCSS(done) {
   done();
 }
 
+function reloadJS(done) {
+  browserSync.reload('*.js');
+  done();
+}
+
 function watch() {
   const watchers = [
     {
@@ -303,6 +308,12 @@ function watch() {
       paths: [normalizePath(paths().source.css, '**', '*.css')],
       config: { awaitWriteFinish: true },
       tasks: gulp.series('pl-copy:css', reloadCSS)
+    },
+    {
+      name: 'JS',
+      paths: [normalizePath(paths().source.js, '**', '*.js')],
+      config: { awaitWriteFinish: true },
+      tasks: gulp.series('pl-copy:js', 'requirejs', reloadJS)
     },
     {
       name: 'SASS',

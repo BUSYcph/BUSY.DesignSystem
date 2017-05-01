@@ -1,23 +1,28 @@
 .message {
-  max-width: 70%;
-  word-wrap: break-word;
-  margin-bottom: 20px;
-  line-height: 24px;
   border-radius: 3px;
   box-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+  display: inline-block;
+  margin-bottom: 20px;
+  line-height: 24px;
   padding: 6px 12px;
   text-align: left;
-  display: inline-block;
+  max-width: 70%;
+  min-width: 56px;
+  min-height: 36px;
+  transition: width 0.35s ease-in-out, height 0.35s ease-in-out;
+  word-wrap: break-word;
 }
 
 .message--sender {
   color: $color-neutral-white;
   background: $color-brand-casal;
+  transform: translate3d(+150%, 0, 0);
 }
 
 .message--recipient {
   background:$color-neutral-very-light-grey;
   color: $color-neutral-black;
+  transform: translate3d(-150%, 0, 0);
 }
 
 .message--messenger {
@@ -28,15 +33,13 @@
   animation-fill-mode: forwards;
 }
 
-.message--messenger.message--sender {
+.message--sender.message--incoming {
   animation-name: appearFromRight;
-  transform: translate3d(+110%, 0, 0);
   opacity: 0;
 }
 
-.message--messenger.message--recipient {
+.message--recipient.message--incoming {
   animation-name: appearFromLeft;
-  transform: translate3d(-110%, 0, 0);
   opacity: 0;
 }
 
@@ -62,6 +65,25 @@
 .message--loading span:nth-child(3){
   animation: bounce 0.8s ease-in-out 0.66s infinite,
     fadeALittle 0.8s ease-in-out 0.33s infinite;
+}
+
+.message__text {
+  opacity: 0;
+  animation: appear 0.35s ease-in 0.2s 1;
+  animation-fill-mode: forwards;
+}
+
+.message__text--transparent {
+  opacity: 0;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeALittle {
