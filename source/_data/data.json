@@ -40,7 +40,7 @@
       "id": 4,
       "isLoading" : false,
       "isRecipient": true,
-      "message": "Men... er det ikke bare udvikling af HTML, CSS og JavaScript?"
+      "message": "Men... er det ikke bare udvikling af HTML, CSS og JavaScript og den slags?"
     },
     {
       "id": 5,
@@ -52,40 +52,46 @@
       "id": 6,
       "isLoading" : false,
       "isRecipient": false,
-      "message": "De nævnte elementer er midler til at nå et mål."
+      "message": "De elementer du nævnte er midler til at nå en række mål."
     },
     {
       "id": 7,
       "isLoading" : false,
       "isRecipient": false,
-      "message": "Et mål om at kunne fungere på et væld af forskellige skærmstørrelser og på tværs af mange kanaler."
+      "message": "Mål om at kunne kommunikere korrekt og konsistent på et væld af forskellige skærmstørrelser og på tværs af mange kanaler."
     },
     {
       "id": 8,
       "isLoading" : false,
       "isRecipient": false,
-      "message": "Og om at formidle dit brands særlige følelse og budskab."
+      "message": "Og om at formidle dit brands særegne følelse og budskab."
     },
     {
       "id": 9,
       "isLoading" : false,
       "isRecipient": false,
-      "message": "Om at være synlig på søgemaskiner og for mennesker med handicap."
+      "message": "Mål om hurtig indlæsning, så dine besøgende kan putte varer i kurven eller læse dit indhold uden irriterende ventetid."
     },
     {
       "id": 10,
       "isLoading" : false,
       "isRecipient": false,
-      "message": "Og, at det hele på én gang skal være realiserbart i teknisk forstand."
+      "message": "Om at være synlig på søgemaskiner og anvedelig for mennesker med handicap."
     },
     {
       "id": 11,
       "isLoading" : false,
       "isRecipient": false,
-      "message": "Alt sammen væsentlige udfordringer der kræver specialistviden og erfaring at udføre korrekt."
+      "message": "Og, at alle de ting på én gang skal være realiserbare i teknisk forstand."
     },
     {
       "id": 12,
+      "isLoading" : false,
+      "isRecipient": false,
+      "message": "Alt sammen væsentlige udfordringer der kræver specialistviden og erfaring at udføre i tilfredsstillende grad."
+    },
+    {
+      "id": 13,
       "isLoading" : false,
       "isRecipient": false,
       "message": "Det er dét BUSY kan hjælpe dig og din forretning med!"

@@ -9,7 +9,7 @@
   max-width: 70%;
   min-width: 56px;
   min-height: 36px;
-  transition: width 0.35s ease-in-out, height 0.35s ease-in-out;
+  transition: width 0.35s cubic-bezier(0.68, 0.01, 0.245, 1.13), height 0.35s cubic-bezier(0.68, 0.01, 0.245, 1.13);
   word-wrap: break-word;
 }
 
@@ -69,7 +69,7 @@
 
 .message__text {
   opacity: 0;
-  animation: appear 0.35s ease-in 0.2s 1;
+  animation: appear 0.5s ease-in 0.2s 1;
   animation-fill-mode: forwards;
 }
 
