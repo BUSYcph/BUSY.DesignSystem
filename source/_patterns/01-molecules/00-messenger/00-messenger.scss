@@ -3,7 +3,7 @@
   list-style: none;
   padding: 20px;
   width: 100%;
-  height: 40vh;
+  overflow: hidden;
 
   @media only screen and (min-width: 768px) {
     width: 30%;
@@ -13,7 +13,7 @@
 }
 
 .m-messenger__line {
-  transition: width 0.35s ease-in-out, height 0.35s ease-in-out;
+  transition: height 0.35s cubic-bezier(0.68, 0.01, 0.245, 1.13);
 }
 
 .m-messenger__line.m-messenger__line--auto-animate  { animation-delay: 2.7s; }

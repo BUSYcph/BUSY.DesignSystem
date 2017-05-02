@@ -9,7 +9,8 @@
   max-width: 70%;
   min-width: 56px;
   min-height: 36px;
-  transition: width 0.35s cubic-bezier(0.68, 0.01, 0.245, 1.13), height 0.35s cubic-bezier(0.68, 0.01, 0.245, 1.13);
+  transition: width 0.35s cubic-bezier(0.68, 0.01, 0.245, 1.13), 
+              height 0.35s cubic-bezier(0.68, 0.01, 0.245, 1.13);
   word-wrap: break-word;
 }
 

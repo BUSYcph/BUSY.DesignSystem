@@ -24,7 +24,7 @@ define(['facade', 'jquery'], function ( facade, $ ) {
         setTimeout(function () {
             facade.publish('message:incoming:' + nextMessage);
             facade.publish('message:new');
-        }, 500);
+        }, 800);
     };
 
     Messenger.prototype.messageIndexing = function () {
@@ -42,15 +42,21 @@ define(['facade', 'jquery'], function ( facade, $ ) {
     };
 
     Messenger.prototype.removeMessage = function ( element ) {
+        
         var messageLine = element.closest('.m-messenger__line');
+        var dimensions = messageLine[0].getBoundingClientRect();
 
-        setTimeout(function () {
-            messageLine.css({
-                width: '0px',
-                height: '0px',
-                minWidth: '0px',
-                minHeight: '0px'
-            });
+        messageLine[0].style.width = dimensions.width + 'px';
+        messageLine[0].style.height = dimensions.height + 'px';
+
+        messageLine.html('');
+
+        setTimeout(function() {
+            messageLine[0].style.height = '0px';
+        }, 100);
+
+        setTimeout(function() {
+            messageLine.remove();
         }, 500);
     };
 

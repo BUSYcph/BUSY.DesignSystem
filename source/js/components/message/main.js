@@ -6,6 +6,7 @@ define(['facade', 'jquery'], function ( facade, $ ) {
         this.message = this.$element.data('message');
         this.messageId = this.$element.data('messageId');
         this.messagesSinceBirth = -1;
+        this.messageStale = false;
         
         this.messageLength = this.message.length;
 
@@ -24,7 +25,7 @@ define(['facade', 'jquery'], function ( facade, $ ) {
 
         this.$element.addClass( 'message--incoming' );
         this.$element.addClass( 'message--loading' );
-        this.$element.html( '<span></span><span></span><span></span>' );
+        this.$element.html( '<span></span> <span></span> <span></span>' );
 
         setTimeout(function () {
             facade.publish('message:sent:' + self.messageId);
@@ -52,32 +53,39 @@ define(['facade', 'jquery'], function ( facade, $ ) {
             self.element.style.height = newDims.height + 'px';
 
             self.$element.find('div').addClass('message__text');
-        }, 100);
 
-        this.releaseMe();
+            self.releaseMe();
+        }, 100);
     };
 
     Message.prototype.releaseMe = function () {
+        var self = this;
+        
         facade.publish('message:complete', this.messageId, this);
         facade.unsubscribe('message:incoming:' + this.messageId);
         facade.unsubscribe('message:sent:' + this.messageId);
+
+        setTimeout(function() {
+            self.$element.removeAttr('style');
+        }, 200);
     };
 
     Message.prototype.stayFresh = function () {
-        if (this.messagesSinceBirth === -1) return;
+        if (this.messagesSinceBirth === -1) {
+            return;
+        }
 
         this.messagesSinceBirth = this.messagesSinceBirth + 1;
         
-        if (this.messagesSinceBirth > 2) {
-            this.tearDown();
+        if (this.messagesSinceBirth > 5 && !this.messageStale) {
+            this.throwOut();
         }
     };
 
-    Message.prototype.tearDown = function () {
-        //this.$element.html('');
-
-        //facade.publish('message:remove', this.$element );
+  Message.prototype.throwOut = function () {
+      this.messageStale = true;
+        facade.publish('message:remove', this.$element );
     };
 
-    return Message;
+  return Message;
 });

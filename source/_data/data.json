@@ -64,19 +64,19 @@
       "id": 8,
       "isLoading" : false,
       "isRecipient": false,
-      "message": "Og om at formidle dit brands særegne følelse og budskab."
+      "message": "Og om at formidle et brands særegne følelse og budskab."
     },
     {
       "id": 9,
       "isLoading" : false,
       "isRecipient": false,
-      "message": "Mål om hurtig indlæsning, så dine besøgende kan putte varer i kurven eller læse dit indhold uden irriterende ventetid."
+      "message": "Mål om hurtig indlæsning, så dine besøgende kan putte varer i kurven eller læse dit indhold uden forstyrrende ventetid."
     },
     {
       "id": 10,
       "isLoading" : false,
       "isRecipient": false,
-      "message": "Om at være synlig på søgemaskiner og anvedelig for mennesker med handicap."
+      "message": "Om at være synlig på søgemaskiner og anvendelig for mennesker med handicap."
     },
     {
       "id": 11,
@@ -87,14 +87,20 @@
     {
       "id": 12,
       "isLoading" : false,
-      "isRecipient": false,
-      "message": "Alt sammen væsentlige udfordringer der kræver specialistviden og erfaring at udføre i tilfredsstillende grad."
+      "isRecipient": true,
+      "message": "😳"
     },
     {
       "id": 13,
       "isLoading" : false,
       "isRecipient": false,
-      "message": "Det er dét BUSY kan hjælpe dig og din forretning med!"
+      "message": "Alt sammen væsentlige udfordringer der kræver specialistviden og erfaring at udføre i tilfredsstillende grad."
+    },
+    {
+      "id": 14,
+      "isLoading" : false,
+      "isRecipient": false,
+      "message": "Det er dét BUSY kan hjælpe dig og din forretning med! 😘 🙌"
     }
   ]
 }
