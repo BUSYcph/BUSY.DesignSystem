@@ -46,14 +46,21 @@
  * Button..............Button object styles.
  * Icon................Generic icon styles.
  *
+ * ATOMS
+ * The basic building block of all matter.
+ * Can't be broken down further without losing function or meaning.
+ * Mostly limited to HTML tags.
+ * Also more abstract elements like color palettes, font stacks or animations.
  *
- * COMPONENTS
- * Discrete, complete chunks of UI (e.g. .carousel {}).
- *
- * Footer..............Footer component styles.
- * Logo................Logo styles.
- * Search..............Search component styles.
- *
+ * MOLECULES
+ * Groups of two or more atoms.
+ * Form simple, functional components.
+ * Groups of UI elements functioning together as a unit.
+ * 
+ * ORGANISMS
+ * Groups of molecules and atoms.
+ * Can also contain smaller organisms.
+ * Form distinct sections of an interface.
  *
  * TRUMPS
  * High-specificity, very explicit selectors. Overrides and helper classes (e.g. .hidden {}).
