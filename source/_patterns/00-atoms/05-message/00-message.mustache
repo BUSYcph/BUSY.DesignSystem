@@ -1,7 +1,7 @@
-<div class="message {{ styleModifier }}
-    {{# isLoading }} message--loading{{/ isLoading }}
-    {{# isRecipient }} message--recipient{{/ isRecipient }}
-    {{^ isRecipient }} message--sender{{/ isRecipient }}
+<div class="a-message {{ styleModifier }}
+    {{# isLoading }} a-message--loading{{/ isLoading }}
+    {{# isRecipient }} a-message--recipient{{/ isRecipient }}
+    {{^ isRecipient }} a-message--sender{{/ isRecipient }}
 " data-message="{{message}}" data-component="message" data-message-id="{{id}}">
     <noscript>{{message}}</noscript>
 

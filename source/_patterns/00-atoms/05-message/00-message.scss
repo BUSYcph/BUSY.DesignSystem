@@ -1,32 +1,32 @@
-.message {
+.a-message {
   border-radius: 3px;
   box-shadow: 0px 1px 1px rgba(0,0,0,0.3);
   display: inline-block;
   margin-bottom: 20px;
   line-height: 24px;
-  padding: 6px 12px;
+  padding: 12px 12px;
   text-align: left;
   max-width: 70%;
-  min-width: 56px;
-  min-height: 36px;
+  min-width: 62.81px;
+  min-height: 48px;
   transition: width 0.35s cubic-bezier(0.68, 0.01, 0.245, 1.13), 
               height 0.35s cubic-bezier(0.68, 0.01, 0.245, 1.13);
   word-wrap: break-word;
 }
 
-.message--sender {
+.a-message--sender {
   color: $color-neutral-white;
   background: $color-brand-casal;
   transform: translate3d(+150%, 0, 0);
 }
 
-.message--recipient {
+.a-message--recipient {
   background:$color-neutral-very-light-grey;
   color: $color-neutral-black;
   transform: translate3d(-150%, 0, 0);
 }
 
-.message--messenger {
+.a-message--messenger {
   animation-delay: inherit;
   animation-duration: 0.5s;
   animation-timing-function: cubic-bezier(0.68, 0.01, 0.245, 1.13);
@@ -34,17 +34,17 @@
   animation-fill-mode: forwards;
 }
 
-.message--sender.message--incoming {
+.a-message--sender.a-message--incoming {
   animation-name: appearFromRight;
   opacity: 0;
 }
 
-.message--recipient.message--incoming {
+.a-message--recipient.a-message--incoming {
   animation-name: appearFromLeft;
   opacity: 0;
 }
 
-.message--loading span{
+.a-message--loading span{
   display: inline-block;
   width: 10px;
   height: 10px;
@@ -53,28 +53,28 @@
   transform: translateY(2px);
 }
 
-.message--loading span:nth-child(1){
+.a-message--loading span:nth-child(1){
   animation: bounce 0.8s ease-in-out infinite,
             fadeALittle 0.8s ease-in-out infinite;
 }
 
-.message--loading span:nth-child(2){
+.a-message--loading span:nth-child(2){
   animation: bounce 0.8s ease-in-out 0.33s infinite,
     fadeALittle 0.8s ease-in-out 0.33s infinite;
 }
 
-.message--loading span:nth-child(3){
+.a-message--loading span:nth-child(3){
   animation: bounce 0.8s ease-in-out 0.66s infinite,
     fadeALittle 0.8s ease-in-out 0.33s infinite;
 }
 
-.message__text {
+.a-message__text {
   opacity: 0;
   animation: appear 0.5s ease-in 0.2s 1;
   animation-fill-mode: forwards;
 }
 
-.message__text--transparent {
+.a-message__text--transparent {
   opacity: 0;
 }
 

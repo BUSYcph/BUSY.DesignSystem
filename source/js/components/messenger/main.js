@@ -14,7 +14,8 @@ define(['facade', 'jquery'], function ( facade, $ ) {
 
         facade.subscribe('message:complete', this.beginNextMessage, this);
         facade.subscribe('message:remove', this.removeMessage, this);
-        facade.subscribe('message:populated', this.updateScroll, this);
+        facade.subscribe('message:entered', this.updateScroll, this);
+        facade.subscribe('message:direction', this.hackDirection, this);
 
         this.beginNextMessage();
     };
@@ -24,7 +25,6 @@ define(['facade', 'jquery'], function ( facade, $ ) {
 
         setTimeout(function () {
             facade.publish('message:incoming:' + nextMessage);
-            facade.publish('message:new');
         }, 800);
     };
 
@@ -42,33 +42,13 @@ define(['facade', 'jquery'], function ( facade, $ ) {
         this.$element.find('.m-messenger__line--auto-animate').removeClass('m-messenger__line--auto-animate');
     };
 
-    Messenger.prototype.removeMessage = function ( element ) {
-        
-        var messageLine = element.closest('.m-messenger__line');
-        var dimensions = messageLine[0].getBoundingClientRect();
+    Messenger.prototype.hackDirection = function (isRecipient) {
+        var direction = isRecipient ? 'ltr' : 'rtl';
 
-        messageLine[0].style.width = dimensions.width + 'px';
-        messageLine[0].style.height = dimensions.height + 'px';
-
-        messageLine.html('');
-
-        setTimeout(function() {
-            messageLine[0].style.height = '0px';
-        }, 100);
-
-        setTimeout(function() {
-            messageLine.remove();
-        }, 500);
-    };
-
-    Messenger.prototype.updateScroll = function () {
-        console.log(this.element);
-        var container = this.element;
-var containerHeight = container.clientHeight;
-var contentHeight = container.scrollHeight;
-
-container.scrollTop = contentHeight - containerHeight;
-    };
+        this.$element.css({
+            'direction' : direction
+        });
+    }
 
     return Messenger;
 });

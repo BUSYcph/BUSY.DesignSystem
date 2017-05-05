@@ -14,24 +14,29 @@ define(['facade', 'jquery'], function ( facade, $ ) {
     };
 
     Message.prototype.init = function () {
-        facade.subscribe('message:new', this.stayFresh, this);
         facade.subscribe('message:incoming:' + this.messageId, this.showLoading, this);
         facade.subscribe('message:sent:' + this.messageId, this.showContent, this);
     };
 
     Message.prototype.showLoading = function () {
         var self = this;
-        var loadTime = 1000 + (30 * this.messageLength);
+        var isRecipient = this.$element.hasClass('a-message--recipient');
 
-        this.$element.addClass( 'message--incoming' );
-        this.$element.addClass( 'message--loading' );
-        this.$element.html( '<span></span> <span></span> <span></span>' );
+        facade.publish('message:direction', isRecipient);
 
-        facade.publish('message:populated');
+        // let's provide some 'realistic' writing time
+        var writingTime = 1000 + (30 * this.messageLength);
+
+        // let's bring it in, and have it shown as loading
+        this.$element.addClass('a-message--incoming');
+        this.$element.addClass('a-message--loading');
+        this.$element.html('<span></span> <span></span> <span></span>');
+
+        self.beSeen();
 
         setTimeout(function () {
             facade.publish('message:sent:' + self.messageId);
-        }, loadTime);
+        }, writingTime);
     };
 
     Message.prototype.showContent = function () {
@@ -42,10 +47,10 @@ define(['facade', 'jquery'], function ( facade, $ ) {
         var oldDims = this.element.getBoundingClientRect();
         var newDims;
 
-        this.$element.removeClass( 'message--loading' );
-        this.$element.html('<div class="message__text--transparent">' + this.message + '</div>');
+        this.$element.removeClass('a-message--loading');
+        this.$element.html('<div class="a-message__text--transparent">' + this.message + '</div>');
         
-        facade.publish('message:populated');
+        this.beSeen();
 
         newDims = this.element.getBoundingClientRect();
 
@@ -56,7 +61,7 @@ define(['facade', 'jquery'], function ( facade, $ ) {
             self.element.style.width = newDims.width + 'px';
             self.element.style.height = newDims.height + 'px';
 
-            self.$element.find('div').addClass('message__text');
+            self.$element.find('.a-message__text--transparent').addClass('a-message__text');
 
             self.releaseMe();
         }, 100);
@@ -66,6 +71,7 @@ define(['facade', 'jquery'], function ( facade, $ ) {
         var self = this;
         
         facade.publish('message:complete', this.messageId, this);
+
         facade.unsubscribe('message:incoming:' + this.messageId);
         facade.unsubscribe('message:sent:' + this.messageId);
 
@@ -74,22 +80,9 @@ define(['facade', 'jquery'], function ( facade, $ ) {
         }, 200);
     };
 
-    Message.prototype.stayFresh = function () {
-        if (this.messagesSinceBirth === -1) {
-            return;
-        }
-
-        this.messagesSinceBirth = this.messagesSinceBirth + 1;
-        
-        if (this.messagesSinceBirth > 5 && !this.messageStale) {
-            this.throwOut();
-        }
-    };
-
-  Message.prototype.throwOut = function () {
-      this.messageStale = true;
-        facade.publish('message:remove', this.$element );
-    };
+    Message.prototype.beSeen = function () {
+        this.element.scrollIntoView(false);
+    }
 
   return Message;
 });

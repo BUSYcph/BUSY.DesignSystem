@@ -1,6 +1,6 @@
 @keyframes appearFromRight{
   from{
-      transform: translate3d(+110%, 0, 0);
+      transform: translate3d(+150%, 0, 0);
       opacity: 0;
   }
   to{
@@ -11,7 +11,7 @@
 
 @keyframes appearFromLeft{
   from{
-      transform: translate3d(-110%, 0, 0);
+      transform: translate3d(-150%, 0, 0);
       opacity: 0;
   }
   to{
