@@ -78,27 +78,22 @@
  */
 
 @import "1-settings/settings.breakpoints.scss";
-@import "1-settings/settings.defaults.scss";
 @import "1-settings/settings.colors.brand.scss";
 @import "1-settings/settings.colors.neutral.scss";
-@import "1-settings/settings.colors.generic.scss";
+@import "1-settings/settings.defaults.scss";
 @import "1-settings/settings.fonts.scss";
-@import "1-settings/settings.bootstrap-variables.scss";
 
 /**
  * #TOOLS
  */
 
-@import "2-tools/tools.grid-mixins.scss";
-@import "2-tools/tools.mixins.scss";
-@import "2-tools/tools.bootstrap-mixins.scss";
+ @import "2-tools/tools.mixins.scss";
 
 /**
  * #GENERIC
  */
 
 @import "3-generic/generic.normalize.scss";
-@import "3-generic/generic.reset.scss";
 @import "3-generic/generic.box-sizing.scss";
 
 /**
@@ -120,28 +115,15 @@
  */
 
 @import "5-objects/object.animations.scss";
-@import "5-objects/object.button.scss";
-@import "5-objects/object.checkbox.scss";
-@import "5-objects/object.icon.scss";
-@import "5-objects/object.iframe.scss";
-@import "5-objects/object.input.scss";
-@import "5-objects/object.link.scss";
-@import "5-objects/object.logo.scss";
-@import "5-objects/object.section.scss";
-@import "5-objects/object.select.scss";
-@import "5-objects/object.site.scss";
-@import "5-objects/object.video.scss";
 
 /**
  * #ATOMS
  */
 
-@import "6-atoms/atom.accordion.scss";
-@import "6-atoms/atom.card.scss";
-@import "6-atoms/atom.headings.scss";
-@import "6-atoms/atom.list-item.scss";
+@import "../_patterns/00-atoms/00-global/04-logo.scss";
 @import "../_patterns/00-atoms/05-message/00-message.scss";
 @import "../_patterns/00-atoms/06-buttons/00-button.scss";
+
 
 /**
  * #MOLECULES
@@ -153,13 +135,12 @@
  * #ORGANISMS
  */
 
-//@import "8-organisms/organism.header.scss";
-//@import "8-organisms/organism.footer.scss";
+@import "../_patterns/02-organisms/00-header/00-header.scss";
 
 /**
  * #TRUMPS
  */
- 
-@import "9-trumps/trumps.grid.scss";
-@import "9-trumps/trumps.show-hide.scss";
+
 @import "9-trumps/trumps.text-align.scss";
+
+//@import "canvas.scss"

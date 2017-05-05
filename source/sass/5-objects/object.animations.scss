@@ -1,7 +1,3 @@
-.o-animation-rise{
-  animation: rise 0.5s 2s 1 cubic-bezier(0.68,-0.37, 0.08, 1.11) both;
-}
-
 @keyframes appearFromRight{
   from{
       transform: translate3d(+110%, 0, 0);
@@ -22,24 +18,4 @@
       transform: translate3d(0, 0, 0);
       opacity: 1;
   }
-}
-
-@keyframes rise{
-  from{
-    transform: translate(-50%, -50%) scale(1);
-  }
-  to{
-    transform: translate(-50%, -120%) scale(0.7);
-  }
-}
-
-@media only screen and (min-width: 768px) {
-    @keyframes rise{
-    from{
-        transform: translate(-50%, -50%) scale(1);
-    }
-    to{
-        transform: translate(-50%, -200%) scale(0.7);
-    }
-    }
 }

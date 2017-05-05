@@ -14,6 +14,7 @@ define(['facade', 'jquery'], function ( facade, $ ) {
 
         facade.subscribe('message:complete', this.beginNextMessage, this);
         facade.subscribe('message:remove', this.removeMessage, this);
+        facade.subscribe('message:populated', this.updateScroll, this);
 
         this.beginNextMessage();
     };
@@ -58,6 +59,15 @@ define(['facade', 'jquery'], function ( facade, $ ) {
         setTimeout(function() {
             messageLine.remove();
         }, 500);
+    };
+
+    Messenger.prototype.updateScroll = function () {
+        console.log(this.element);
+        var container = this.element;
+var containerHeight = container.clientHeight;
+var contentHeight = container.scrollHeight;
+
+container.scrollTop = contentHeight - containerHeight;
     };
 
     return Messenger;

@@ -1,0 +1,45 @@
+.entrance {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gridbox {
+  padding: 1.5em 3em;
+}
+
+.gridbox--identity {
+  position: relative;
+}
+
+.h-half {
+  width: 50%;
+  overflow: hidden;
+}
+
+.v-half {
+  height: 50vh;
+  overflow: hidden;
+}
+.bg-sand {
+  background: #ccc;
+}
+
+.bg-casal {
+  background: #305361;
+}
+
+.bg-bayoux {
+  background: #4e737b;
+}
+
+.bg-lynch {
+  background: #628190;
+}
+
+.bg-balihai {
+  background: #89a3af;
+}
+
+.bg-yellow {
+  background: #E7DFC6;
+}

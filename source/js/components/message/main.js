@@ -27,6 +27,8 @@ define(['facade', 'jquery'], function ( facade, $ ) {
         this.$element.addClass( 'message--loading' );
         this.$element.html( '<span></span> <span></span> <span></span>' );
 
+        facade.publish('message:populated');
+
         setTimeout(function () {
             facade.publish('message:sent:' + self.messageId);
         }, loadTime);
@@ -42,6 +44,8 @@ define(['facade', 'jquery'], function ( facade, $ ) {
 
         this.$element.removeClass( 'message--loading' );
         this.$element.html('<div class="message__text--transparent">' + this.message + '</div>');
+        
+        facade.publish('message:populated');
 
         newDims = this.element.getBoundingClientRect();
 

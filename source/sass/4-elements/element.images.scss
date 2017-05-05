@@ -1,6 +1,5 @@
 /*------------------------------------*\
 		base.images
-    Created by kvr on 07-04-2016
 \*------------------------------------*/
 
 /**
@@ -14,10 +13,4 @@ img {
 	max-width: 100%; /* [1] */
 	font-style: italic; /* [2] */
 	vertical-align: middle; /* [3] */
-}
-
-.article__picture {
-	.image {
-		margin-bottom: $spacing-unit;
-	}
 }

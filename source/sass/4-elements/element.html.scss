@@ -14,6 +14,10 @@
  * 4. Set overflow-x hidden, so using 100vw (on .article__background .e.g.) does not cause
  *    horizontal scrollbar to appear, when vertical scrollbar is showing
  */
+
+$color-background: $color-neutral-white;
+$color-font-positive: $color-neutral-black;
+
 html {
 	font-family: $font-primary; /* 1 */
 	font-size: ($base-font-size / 16px) * 1em; /* [1] */

@@ -1,6 +1,5 @@
 /*------------------------------------*\
 		object.blockquote
-    Created by kvr on 13-12-2016
 \*------------------------------------*/
 
 blockquote {
@@ -9,7 +8,7 @@ blockquote {
 
 	position: relative;
 
-	font-family: $font-primary-extrabold;
+	font-family: $font-primary;
 	@include font-size-responsive(36px);
 	line-height: $base-line-height--unitless;
 

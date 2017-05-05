@@ -1,0 +1,18 @@
+.a-logo {
+    width: 20vw;
+    height: 20vh;
+    transform: translate(0, 30vh) scale(3);
+}
+
+.a-logo--fit {
+  animation: fitIntoHeader 0.5s 2s 1 cubic-bezier(0.68,-0.37, 0.08, 1.11) both;
+}
+
+@keyframes fitIntoHeader {
+  from{
+    transform: translate(0, 30vh) scale(3);
+  }
+  to{
+    transform: translate(0, 0) scale(1);
+  }
+}
