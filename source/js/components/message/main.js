@@ -6,6 +6,7 @@ define(['facade'], function ( facade ) {
         this.messageId = this.element.getAttribute('data-message-id');  
         this.messageLength = this.message.length;
         this.options = this.element.getAttribute('data-options');
+        this.skipLoading = this.element.getAttribute('data-skiploading');
 
         this.init();
     };
@@ -16,19 +17,25 @@ define(['facade'], function ( facade ) {
     };
 
     Message.prototype.showLoading = function () {
-        // let's provide some 'realistic' writing time
-        var writingTime = 1000 + (10 * this.messageLength);
-
-        // let's bring it in, and have it shown as loading
-        this.element.classList.add('a-message--incoming', 'a-message--loading');
-        this.element.innerHTML = '<span></span> <span></span> <span></span>';
-        
-        // and make sure it's visible on screen
-        this.scrollIntoView();
-
-        setTimeout(function () {
+        if (this.skipLoading) {
+            this.element.classList.add('a-message--incoming');
+            this.scrollIntoView();
             facade.publish('message:sent:' + this.messageId);
-        }.bind(this), writingTime);
+        }else{
+            // let's provide some 'realistic' writing time
+            var writingTime = 900 + (10 * this.messageLength);
+
+            // let's bring it in, and have it shown as loading
+            this.element.classList.add('a-message--incoming', 'a-message--loading');
+            this.element.innerHTML = '<span></span> <span></span> <span></span>';
+            
+            // and make sure it's visible on screen
+            this.scrollIntoView();
+
+            setTimeout(function () {
+                facade.publish('message:sent:' + this.messageId);
+            }.bind(this), writingTime);
+        }
     };
 
     Message.prototype.showContent = function () {
@@ -64,7 +71,7 @@ define(['facade'], function ( facade ) {
     };
 
     Message.prototype.releaseMe = function () {        
-        facade.publish('message:complete', this.messageId, this);
+        facade.publish('message:complete');
 
         facade.unsubscribe('message:incoming:' + this.messageId);
         facade.unsubscribe('message:sent:' + this.messageId);

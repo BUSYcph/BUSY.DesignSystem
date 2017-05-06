@@ -28,12 +28,13 @@ define(['facade', 'components/message/messages', 'polyfills/closest'], function 
         this.beginNextMessage();
     };
 
-    Messenger.prototype.beginNextMessage = function () {
+    Messenger.prototype.beginNextMessage = function (immediately) {
         var nextMessage = this.messageIndex.shift();
+        var delay = immediately ? 1 : 1000;
 
         setTimeout(function () {
             facade.publish('message:incoming:' + nextMessage);
-        }, 1000);
+        }, delay);
     };
 
     Messenger.prototype.messageIndexing = function () {
@@ -77,7 +78,7 @@ define(['facade', 'components/message/messages', 'polyfills/closest'], function 
 
     Messenger.prototype.showOptions = function (messageId) {
         var optionsHTML = [];
-        console.log(this.optionsMap);
+        
         var options = this.optionsMap[messageId];
 
         options.forEach(function(option, i) {
@@ -85,6 +86,28 @@ define(['facade', 'components/message/messages', 'polyfills/closest'], function 
         }.bind(this));
 
         this.options.innerHTML = optionsHTML.join('');
+
+        this.options.querySelectorAll('.a-message--option').forEach(function(el) {
+            el.addEventListener('click', this.clickOption.bind(this));
+            el.classList.add('a-message--incoming');
+        }.bind(this));
+    };
+
+    Messenger.prototype.clickOption = function (e) {
+        // TODO: google analytics
+        var action = e.currentTarget.getAttribute('data-action');
+
+        switch(action) {
+            case 'continue':
+                facade.publish('message:complete', true);
+            break;
+            case 'navigate:services':
+                window.location.href = 'services';
+            break;
+            case 'navigate:about':
+                window.location.href = 'about';
+            break;
+        }
     };
 
     Messenger.prototype.createMessage = function (message) {
@@ -109,6 +132,10 @@ define(['facade', 'components/message/messages', 'polyfills/closest'], function 
 
         if (hasOptions) {
             messageHTML += 'data-options="'+ message.id +'"';
+        }
+
+        if (message.skipLoading) {
+            messageHTML += 'data-skiploading="true"';
         }
 
         messageHTML += '></div>';

@@ -29,16 +29,21 @@
 .a-message--option {
   background: $color-brand-bayoux;
   color: $color-neutral-white;
-  max-width: 40%;
   margin: 0 20px;
+  max-width: 40%;
+  transform: translate3d(0, +150%, 0);
 
   &--primary {
-    
+    animation-delay: 0.5s;
   }
 
   &--secondary {
-    
+    animation-delay: 0.8s;
   }
+}
+
+.a-message--option.a-message--incoming {
+  animation-name: appearFromBottom;
 }
 
 .a-message--option + .a-message--option {
@@ -122,5 +127,38 @@
 
   25%{
     transform: translateY(-6px);
+  }
+}
+
+@keyframes appearFromRight{
+  from{
+      transform: translate3d(+150%, 0, 0);
+      opacity: 0;
+  }
+  to{
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+  }
+}
+
+@keyframes appearFromLeft{
+  from{
+      transform: translate3d(-150%, 0, 0);
+      opacity: 0;
+  }
+  to{
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+  }
+}
+
+@keyframes appearFromBottom {
+  from{
+      transform: translate3d(0, +150%, 0);
+      opacity: 0;
+  }
+  to{
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
   }
 }
