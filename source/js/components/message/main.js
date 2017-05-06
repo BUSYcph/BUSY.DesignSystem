@@ -1,5 +1,4 @@
 define(['facade'], function ( facade ) {
-
     var Message = function ( element ) {
         this.element = element;
 
@@ -19,7 +18,7 @@ define(['facade'], function ( facade ) {
         var self = this;
 
         // let's provide some 'realistic' writing time
-        var writingTime = 1000 + (20 * this.messageLength);
+        var writingTime = 1000 + (10 * this.messageLength);
 
         // let's bring it in, and have it shown as loading
         this.element.classList.add('a-message--incoming', 'a-message--loading');

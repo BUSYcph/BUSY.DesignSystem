@@ -1,15 +1,20 @@
-define(['facade', 'polyfills/closest'], function ( facade ) {
+define(['facade', 'components/message/messages', 'polyfills/closest'], function ( facade, messages ) {
 
     var Messenger = function ( element ) {
         this.element = element;
 
         this.messageIndex = [];
+        this.optionsMap = {}
 
         this.init();
     };
 
     Messenger.prototype.init = function () {
         this.enableScripting();
+    };
+
+    Messenger.prototype.messagesReady = function () {
+        facade.publish('loader:refresh');
 
         this.messageIndex = this.messageIndexing();
 
@@ -25,7 +30,7 @@ define(['facade', 'polyfills/closest'], function ( facade ) {
 
         setTimeout(function () {
             facade.publish('message:incoming:' + nextMessage);
-        }, 800);
+        }, 1000);
     };
 
     Messenger.prototype.messageIndexing = function () {
@@ -39,9 +44,62 @@ define(['facade', 'polyfills/closest'], function ( facade ) {
     };
 
     Messenger.prototype.enableScripting = function () {
-        this.element.querySelectorAll('.m-messenger__line--auto-animate').forEach(function(messageLine) {
-            messageLine.classList.remove('m-messenger__line--auto-animate');
+        this.element.innerHTML = '';
+
+        this.populateMessages();
+    };
+
+    Messenger.prototype.mapOptions = function () {
+        var optionsMap = this.optionsMap;
+        
+        messages.forEach(function (message, i) {
+            if (typeof message.options !== 'undefined') {
+                optionsMap[message.id] = message.options;
+            }
         });
+    };
+
+    Messenger.prototype.populateMessages = function () {
+        var self = this;
+        var messagesHTML = [];
+
+        messages.forEach(function (message, i) {
+            messagesHTML.push(self.createMessage(message));
+        });      
+
+        this.element.innerHTML = messagesHTML.join('');
+
+        this.messagesReady();
+    };
+
+    Messenger.prototype.createMessage = function (message) {
+        var messageHTML = '';
+        var hasOptions = typeof message.options !== 'undefined';
+
+        messageHTML += '<li class="m-messenger__line';
+
+        if (!message.isRecipient) {
+            messageHTML += ' t-text--right';
+        }
+        messageHTML += '">';
+        
+        messageHTML += '<div class="a-message a-message--messenger';
+
+        if (message.isRecipient) {
+            messageHTML += ' a-message--recipient';
+        }else{
+            messageHTML += ' a-message--sender';
+        }
+        messageHTML += '" data-message="'+ message.message +'" data-component="message" data-message-id="'+ message.id +'"';
+
+        if (hasOptions) {
+            messageHTML += 'data-options="'+ message.id +'"';
+        }
+
+        messageHTML += '></div>';
+        messageHTML += '</li>';
+
+        return messageHTML;
     };
 
     Messenger.prototype.updateScroll = function ( messageId ) {

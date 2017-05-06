@@ -2,27 +2,21 @@
   border-radius: 3px;
   box-shadow: 0px 1px 1px rgba(0,0,0,0.3);
   display: inline-block;
-  margin-bottom: 20px;
   line-height: 24px;
-  padding: 12px 12px;
-  text-align: left;
+  margin-bottom: 20px;
   max-width: 70%;
   min-width: 62.81px;
   min-height: 48px;
+  padding: 12px 12px;
+  text-align: left;
   transition: width 0.35s cubic-bezier(0.68, 0.01, 0.245, 1.13), 
               height 0.35s cubic-bezier(0.68, 0.01, 0.245, 1.13);
   word-wrap: break-word;
-
-  &:after {
-    content: '';
-    display: block;
-    height:2px;
-  }
 }
 
 .a-message--sender {
-  color: $color-neutral-white;
   background: $color-brand-casal;
+  color: $color-neutral-white;
   transform: translate3d(+150%, 0, 0);
 }
 
@@ -35,9 +29,9 @@
 .a-message--messenger {
   animation-delay: inherit;
   animation-duration: 0.5s;
-  animation-timing-function: cubic-bezier(0.68, 0.01, 0.245, 1.13);
-  animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.68, 0.01, 0.245, 1.13);
 }
 
 .a-message--sender.a-message--incoming {
@@ -51,11 +45,11 @@
 }
 
 .a-message--loading span{
+  background-color: $color-neutral-light-grey;
+  border-radius: 100%;
   display: inline-block;
   width: 10px;
   height: 10px;
-  border-radius: 100%;
-  background-color: $color-neutral-light-grey;
   transform: translateY(2px);
 }
 
@@ -75,9 +69,9 @@
 }
 
 .a-message__text {
-  opacity: 0;
   animation: appear 0.5s ease-in 0.2s 1;
   animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 .a-message__text--transparent {
