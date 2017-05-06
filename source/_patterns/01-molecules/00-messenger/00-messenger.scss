@@ -7,16 +7,9 @@
   padding: 0 12px;
   overflow: hidden;
   position: relative;
-  direction: rtl;
-
-  @media only screen and (min-width: 768px) {
-    
-  }
 }
 
 .m-messenger__line {
-  direction: ltr;
-  text-align: left;
   transition: height 0.35s cubic-bezier(0.68, 0.01, 0.245, 1.13);
 }
 

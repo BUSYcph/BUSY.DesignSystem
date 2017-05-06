@@ -1,13 +1,10 @@
-define(['facade', 'jquery'], function ( facade, $ ) {
+define(['facade'], function ( facade ) {
+
     var Message = function ( element ) {
         this.element = element;
-        this.$element = $(element);
 
-        this.message = this.$element.data('message');
-        this.messageId = this.$element.data('messageId');
-        this.messagesSinceBirth = -1;
-        this.messageStale = false;
-        
+        this.message = this.element.getAttribute('data-message');
+        this.messageId = this.element.getAttribute('data-message-id');  
         this.messageLength = this.message.length;
 
         this.init();
@@ -20,18 +17,14 @@ define(['facade', 'jquery'], function ( facade, $ ) {
 
     Message.prototype.showLoading = function () {
         var self = this;
-        var isRecipient = this.$element.hasClass('a-message--recipient');
-
-        facade.publish('message:direction', isRecipient);
 
         // let's provide some 'realistic' writing time
-        var writingTime = 1000 + (30 * this.messageLength);
+        var writingTime = 1000 + (20 * this.messageLength);
 
         // let's bring it in, and have it shown as loading
-        this.$element.addClass('a-message--incoming');
-        this.$element.addClass('a-message--loading');
-        this.$element.html('<span></span> <span></span> <span></span>');
-
+        this.element.classList.add('a-message--incoming', 'a-message--loading');
+        this.element.innerHTML = '<span></span> <span></span> <span></span>';
+        
         self.beSeen();
 
         setTimeout(function () {
@@ -40,15 +33,13 @@ define(['facade', 'jquery'], function ( facade, $ ) {
     };
 
     Message.prototype.showContent = function () {
-        this.messagesSinceBirth = 0;
-
         var self = this;
 
         var oldDims = this.element.getBoundingClientRect();
         var newDims;
 
-        this.$element.removeClass('a-message--loading');
-        this.$element.html('<div class="a-message__text--transparent">' + this.message + '</div>');
+        this.element.classList.remove('a-message--loading');
+        this.element.innerHTML = '<div class="a-message__text--transparent">' + this.message + '</div>';
         
         this.beSeen();
 
@@ -61,7 +52,7 @@ define(['facade', 'jquery'], function ( facade, $ ) {
             self.element.style.width = newDims.width + 'px';
             self.element.style.height = newDims.height + 'px';
 
-            self.$element.find('.a-message__text--transparent').addClass('a-message__text');
+            self.element.querySelector('.a-message__text--transparent').classList.add('a-message__text');
 
             self.releaseMe();
         }, 100);
@@ -76,13 +67,14 @@ define(['facade', 'jquery'], function ( facade, $ ) {
         facade.unsubscribe('message:sent:' + this.messageId);
 
         setTimeout(function() {
-            self.$element.removeAttr('style');
+            self.element.removeAttribute('style');
         }, 200);
     };
 
     Message.prototype.beSeen = function () {
-        this.element.scrollIntoView(false);
-    }
+        facade.publish('messenger:scroll', this.messageId);
+    };
 
   return Message;
+
 });

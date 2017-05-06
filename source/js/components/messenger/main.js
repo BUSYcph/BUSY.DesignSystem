@@ -1,7 +1,7 @@
-define(['facade', 'jquery'], function ( facade, $ ) {
+define(['facade', 'polyfills/closest'], function ( facade ) {
+
     var Messenger = function ( element ) {
         this.element = element;
-        this.$element = $(element);
 
         this.messageIndex = [];
 
@@ -10,12 +10,12 @@ define(['facade', 'jquery'], function ( facade, $ ) {
 
     Messenger.prototype.init = function () {
         this.enableScripting();
+
         this.messageIndex = this.messageIndexing();
 
         facade.subscribe('message:complete', this.beginNextMessage, this);
         facade.subscribe('message:remove', this.removeMessage, this);
-        facade.subscribe('message:entered', this.updateScroll, this);
-        facade.subscribe('message:direction', this.hackDirection, this);
+        facade.subscribe('messenger:scroll', this.updateScroll, this);
 
         this.beginNextMessage();
     };
@@ -29,26 +29,27 @@ define(['facade', 'jquery'], function ( facade, $ ) {
     };
 
     Messenger.prototype.messageIndexing = function () {
-        var index = [];
-        
-        this.$element.find('[data-component="message"]').each(function () {
-            index.push( $(this).data('messageId') );
+        var messageIndex = [];
+
+        this.element.querySelectorAll('[data-component="message"]').forEach(function (message) {
+            messageIndex.push( message.getAttribute('data-message-id') );
         });
 
-        return index;
+        return messageIndex;
     };
 
     Messenger.prototype.enableScripting = function () {
-        this.$element.find('.m-messenger__line--auto-animate').removeClass('m-messenger__line--auto-animate');
+        this.element.querySelectorAll('.m-messenger__line--auto-animate').forEach(function(messageLine) {
+            messageLine.classList.remove('m-messenger__line--auto-animate');
+        });
     };
 
-    Messenger.prototype.hackDirection = function (isRecipient) {
-        var direction = isRecipient ? 'ltr' : 'rtl';
+    Messenger.prototype.updateScroll = function ( messageId ) {
+        var message = this.element.querySelector('[data-message-id="'+messageId+'"]');
 
-        this.$element.css({
-            'direction' : direction
-        });
-    }
+        message.closest('.m-messenger__line').scrollIntoView(false);
+    };
 
     return Messenger;
+    
 });
