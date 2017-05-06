@@ -2,6 +2,8 @@ define(['facade', 'components/message/messages', 'polyfills/closest'], function 
 
     var Messenger = function ( element ) {
         this.element = element;
+        this.list = this.element.querySelector('.m-messenger__list');
+        this.options = this.element.querySelector('.m-messenger__options');
 
         this.messageIndex = [];
         this.optionsMap = {}
@@ -20,6 +22,7 @@ define(['facade', 'components/message/messages', 'polyfills/closest'], function 
 
         facade.subscribe('message:complete', this.beginNextMessage, this);
         facade.subscribe('message:remove', this.removeMessage, this);
+        facade.subscribe('message:options', this.showOptions, this);
         facade.subscribe('messenger:scroll', this.updateScroll, this);
 
         this.beginNextMessage();
@@ -36,7 +39,7 @@ define(['facade', 'components/message/messages', 'polyfills/closest'], function 
     Messenger.prototype.messageIndexing = function () {
         var messageIndex = [];
 
-        this.element.querySelectorAll('[data-component="message"]').forEach(function (message) {
+        this.list.querySelectorAll('[data-component="message"]').forEach(function (message) {
             messageIndex.push( message.getAttribute('data-message-id') );
         });
 
@@ -44,8 +47,9 @@ define(['facade', 'components/message/messages', 'polyfills/closest'], function 
     };
 
     Messenger.prototype.enableScripting = function () {
-        this.element.innerHTML = '';
+        this.list.innerHTML = '';
 
+        this.mapOptions();
         this.populateMessages();
     };
 
@@ -60,16 +64,27 @@ define(['facade', 'components/message/messages', 'polyfills/closest'], function 
     };
 
     Messenger.prototype.populateMessages = function () {
-        var self = this;
         var messagesHTML = [];
 
         messages.forEach(function (message, i) {
-            messagesHTML.push(self.createMessage(message));
-        });      
+            messagesHTML.push(this.createMessage(message));
+        }.bind(this));      
 
-        this.element.innerHTML = messagesHTML.join('');
+        this.list.innerHTML = messagesHTML.join('');
 
         this.messagesReady();
+    };
+
+    Messenger.prototype.showOptions = function (messageId) {
+        var optionsHTML = [];
+        console.log(this.optionsMap);
+        var options = this.optionsMap[messageId];
+
+        options.forEach(function(option, i) {
+            optionsHTML.push(this.createOption(option));
+        }.bind(this));
+
+        this.options.innerHTML = optionsHTML.join('');
     };
 
     Messenger.prototype.createMessage = function (message) {
@@ -102,8 +117,20 @@ define(['facade', 'components/message/messages', 'polyfills/closest'], function 
         return messageHTML;
     };
 
+    Messenger.prototype.createOption = function (option) {
+        var optionHTML = '';
+
+        optionHTML += '<div class="a-message a-message--option a-message--option--'+option.role+'"';
+        optionHTML += ' data-action="'+option.action+'"';
+        optionHTML += '>';
+        optionHTML += '<div class="a-message__text--transparent a-message__text">'+option.message+'</div>';
+        optionHTML += '</div>';
+
+        return optionHTML;
+    };
+
     Messenger.prototype.updateScroll = function ( messageId ) {
-        var message = this.element.querySelector('[data-message-id="'+messageId+'"]');
+        var message = this.list.querySelector('[data-message-id="'+messageId+'"]');
 
         message.closest('.m-messenger__line').scrollIntoView(false);
     };

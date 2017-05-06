@@ -26,6 +26,25 @@
   transform: translate3d(-150%, 0, 0);
 }
 
+.a-message--option {
+  background: $color-brand-bayoux;
+  color: $color-neutral-white;
+  max-width: 40%;
+  margin: 0 20px;
+
+  &--primary {
+    
+  }
+
+  &--secondary {
+    
+  }
+}
+
+.a-message--option + .a-message--option {
+  margin-left: 0;
+}
+
 .a-message--messenger {
   animation-delay: inherit;
   animation-duration: 0.5s;

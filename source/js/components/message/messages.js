@@ -10,7 +10,7 @@ define(function() {
         "id": 2,
         "isLoading" : false,
         "isRecipient": true,
-        "message": "Tak... hvad er BUSY?"
+        "message": "Tak... hvad er BUSY 🤔 ?"
         },
         {
         "id": 3,

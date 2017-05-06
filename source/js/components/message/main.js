@@ -5,6 +5,7 @@ define(['facade'], function ( facade ) {
         this.message = this.element.getAttribute('data-message');
         this.messageId = this.element.getAttribute('data-message-id');  
         this.messageLength = this.message.length;
+        this.options = this.element.getAttribute('data-options');
 
         this.init();
     };
@@ -15,8 +16,6 @@ define(['facade'], function ( facade ) {
     };
 
     Message.prototype.showLoading = function () {
-        var self = this;
-
         // let's provide some 'realistic' writing time
         var writingTime = 1000 + (10 * this.messageLength);
 
@@ -24,23 +23,22 @@ define(['facade'], function ( facade ) {
         this.element.classList.add('a-message--incoming', 'a-message--loading');
         this.element.innerHTML = '<span></span> <span></span> <span></span>';
         
-        self.beSeen();
+        // and make sure it's visible on screen
+        this.scrollIntoView();
 
         setTimeout(function () {
-            facade.publish('message:sent:' + self.messageId);
-        }, writingTime);
+            facade.publish('message:sent:' + this.messageId);
+        }.bind(this), writingTime);
     };
 
     Message.prototype.showContent = function () {
-        var self = this;
-
         var oldDims = this.element.getBoundingClientRect();
         var newDims;
 
         this.element.classList.remove('a-message--loading');
         this.element.innerHTML = '<div class="a-message__text--transparent">' + this.message + '</div>';
         
-        this.beSeen();
+        this.scrollIntoView();
 
         newDims = this.element.getBoundingClientRect();
 
@@ -48,29 +46,35 @@ define(['facade'], function ( facade ) {
         this.element.style.height = oldDims.height + 'px';
 
         setTimeout(function () {
-            self.element.style.width = newDims.width + 'px';
-            self.element.style.height = newDims.height + 'px';
+            this.element.style.width = newDims.width + 'px';
+            this.element.style.height = newDims.height + 'px';
 
-            self.element.querySelector('.a-message__text--transparent').classList.add('a-message__text');
-
-            self.releaseMe();
-        }, 100);
+            this.element.querySelector('.a-message__text--transparent').classList.add('a-message__text');
+            
+            if (this.options) {
+                this.callForOptions();
+            }else{
+                this.releaseMe();
+            }
+        }.bind(this), 100);
     };
 
-    Message.prototype.releaseMe = function () {
-        var self = this;
-        
+    Message.prototype.callForOptions = function () {
+        facade.publish('message:options', this.messageId, this);
+    };
+
+    Message.prototype.releaseMe = function () {        
         facade.publish('message:complete', this.messageId, this);
 
         facade.unsubscribe('message:incoming:' + this.messageId);
         facade.unsubscribe('message:sent:' + this.messageId);
 
         setTimeout(function() {
-            self.element.removeAttribute('style');
-        }, 200);
+            this.element.removeAttribute('style');
+        }.bind(this), 200);
     };
 
-    Message.prototype.beSeen = function () {
+    Message.prototype.scrollIntoView = function () {
         facade.publish('messenger:scroll', this.messageId);
     };
 

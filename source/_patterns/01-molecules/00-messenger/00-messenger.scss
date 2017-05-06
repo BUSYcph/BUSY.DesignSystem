@@ -1,4 +1,4 @@
-.m-messenger {
+.m-messenger__list {
   display: block;
   list-style: none;
   width: 100%;
@@ -6,7 +6,13 @@
   height: 300px;
   padding: 0 12px;
   overflow: hidden;
-  position: relative;
+}
+
+.m-messenger__options {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
 }
 
 .m-messenger__line {

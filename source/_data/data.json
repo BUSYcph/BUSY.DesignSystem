@@ -103,6 +103,18 @@
       "message": "Det er dét BUSY kan hjælpe dig og din forretning med! 😘 🙌"
     }
   ],
+  "options": [
+                {
+                    "role": "primary",
+                    "message": "Ja, lad mig høre. Det lyder spændende!",
+                    "action": "continue"
+                },
+                {
+                    "role": "secondary",
+                    "message": "Nej tak. Vis mig hellere BUSYs services",
+                    "action": "navigate"
+                }
+            ],
   "service" : {
         "heading1": "Lorem ipsum",
         "description": [
