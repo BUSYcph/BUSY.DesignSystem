@@ -24,6 +24,7 @@ define(['facade', 'components/message/messages', 'polyfills/closest'], function 
         facade.subscribe('message:remove', this.removeMessage, this);
         facade.subscribe('message:options', this.showOptions, this);
         facade.subscribe('messenger:scroll', this.updateScroll, this);
+        facade.subscribe('messenger:hide-options', this.hideOptions, this);
 
         this.beginNextMessage();
     };
@@ -87,15 +88,39 @@ define(['facade', 'components/message/messages', 'polyfills/closest'], function 
 
         this.options.innerHTML = optionsHTML.join('');
 
-        this.options.querySelectorAll('.a-message--option').forEach(function (el) {
-            el.addEventListener('click', this.clickOption.bind(this));
-            el.classList.add('a-message--incoming');
-        }.bind(this));
+        setTimeout(function () {
+            this.options.querySelectorAll('.a-message--option').forEach(function (el) {
+                el.addEventListener('click', this.clickOption.bind(this));
+                el.classList.add('a-message--incoming');
+            }.bind(this));
+        }.bind(this), 1000);
     };
 
-    Messenger.prototype.clickOption = function (e) {
+    Messenger.prototype.hideOptions = function () {
+        var lastOptions = this.options.querySelector('.a-message--option.a-message--incoming');
+
+        // let's have our options cleaned out completely when transitions are completed
+        lastOptions.addEventListener('transitionend', function (e, callee) {
+            e.currentTarget.removeEventListener(e.type, callee);
+            this.options.innerHTML = '';
+        }.bind(this));
+
+        // let's remove the option not selected just a tad after the one selected
+        setTimeout(function () {
+            this.options.querySelector('.a-message--option.a-message--incoming').classList.remove('a-message--incoming');
+        }.bind(this), 200);
+    };
+
+    Messenger.prototype.clickOption = function (e, callee) {
         // TODO: google analytics
         var action = e.currentTarget.getAttribute('data-action');
+
+        // the next thing we're doing, is removing the options. For this we don't want distinct delays on transitions anymore. We want it to be the option clicked, that leaves first.
+        this.options.querySelector('.a-message--option--primary').classList.remove('a-message--option--primary');
+        this.options.querySelector('.a-message--option--secondary').classList.remove('a-message--option--secondary');
+
+        e.currentTarget.removeEventListener(e.type, callee);
+        e.currentTarget.classList.remove('a-message--incoming');
 
         switch (action) {
             case 'continue':
@@ -108,6 +133,8 @@ define(['facade', 'components/message/messages', 'polyfills/closest'], function 
                 window.location.href = 'about';
                 break;
         }
+
+        facade.publish('messenger:hide-options');
     };
 
     Messenger.prototype.createMessage = function (message) {

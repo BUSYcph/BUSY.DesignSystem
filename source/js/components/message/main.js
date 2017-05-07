@@ -1,5 +1,8 @@
 define(['facade'], function (facade) {
+
     var Message = function (element) {
+        this.writingDelay = 900;
+
         this.element = element;
 
         this.message = this.element.getAttribute('data-message');
@@ -27,7 +30,7 @@ define(['facade'], function (facade) {
             facade.publish('message:sent:' + this.messageId);
         } else {
             // let's provide some 'realistic' writing time
-            writingTime = 900 + (10 * this.messageLength);
+            writingTime = this.writingDelay + (10 * this.messageLength);
 
             // let's bring it in, and have it shown as loading
             this.element.classList.add('a-message--incoming', 'a-message--loading');
