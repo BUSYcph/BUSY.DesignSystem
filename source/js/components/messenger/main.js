@@ -93,7 +93,7 @@ define(['facade', 'components/message/messages', 'polyfills/closest'], function 
                 el.addEventListener('click', this.clickOption.bind(this));
                 el.classList.add('a-message--incoming');
             }.bind(this));
-        }.bind(this), 1000);
+        }.bind(this), 100);
     };
 
     Messenger.prototype.hideOptions = function () {

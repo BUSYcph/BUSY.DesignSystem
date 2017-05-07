@@ -11,6 +11,10 @@ define(['facade'], function (facade) {
         this.options = this.element.getAttribute('data-options');
         this.skipLoading = this.element.getAttribute('data-skiploading');
 
+        // let's calculate some 'realistic' reading/writing time
+        this.writingTime = this.writingDelay + (10 * this.messageLength);
+        this.readingTime = this.writingTime - 200;
+
         this.init();
     };
 
@@ -29,9 +33,6 @@ define(['facade'], function (facade) {
 
             facade.publish('message:sent:' + this.messageId);
         } else {
-            // let's provide some 'realistic' writing time
-            writingTime = this.writingDelay + (10 * this.messageLength);
-
             // let's bring it in, and have it shown as loading
             this.element.classList.add('a-message--incoming', 'a-message--loading');
             this.element.innerHTML = '<span></span> <span></span> <span></span>';
@@ -41,7 +42,7 @@ define(['facade'], function (facade) {
 
             setTimeout(function () {
                 facade.publish('message:sent:' + this.messageId);
-            }.bind(this), writingTime);
+            }.bind(this), this.writingTime);
         }
     };
 
@@ -70,22 +71,26 @@ define(['facade'], function (facade) {
             } else {
                 this.releaseMe();
             }
-        }.bind(this), 100);
+        }.bind(this), 150);
     };
 
     Message.prototype.callForOptions = function () {
-        facade.publish('message:options', this.messageId, this);
+        setTimeout(function () {
+            facade.publish('message:options', this.messageId, this);
+        }.bind(this), this.readingTime);
     };
 
     Message.prototype.releaseMe = function () {
-        facade.publish('message:complete');
-
-        facade.unsubscribe('message:incoming:' + this.messageId);
-        facade.unsubscribe('message:sent:' + this.messageId);
-
         setTimeout(function () {
-            this.element.removeAttribute('style');
-        }.bind(this), 200);
+            facade.publish('message:complete');
+
+            facade.unsubscribe('message:incoming:' + this.messageId);
+            facade.unsubscribe('message:sent:' + this.messageId);
+
+            setTimeout(function () {
+                this.element.removeAttribute('style');
+            }.bind(this), 200);
+        }.bind(this), this.readingTime);
     };
 
     Message.prototype.scrollIntoView = function () {
