@@ -26,7 +26,9 @@ define(['facade', 'components/message/messages', 'polyfills/closest'], function 
         facade.subscribe('messenger:scroll', this.updateScroll, this);
         facade.subscribe('messenger:hide-options', this.hideOptions, this);
 
-        this.beginNextMessage();
+        setTimeout(function () {
+            this.beginNextMessage();
+        }.bind(this), 1300);
     };
 
     Messenger.prototype.beginNextMessage = function (immediately) {
@@ -112,8 +114,10 @@ define(['facade', 'components/message/messages', 'polyfills/closest'], function 
     };
 
     Messenger.prototype.clickOption = function (e, callee) {
-        // TODO: google analytics
         var action = e.currentTarget.getAttribute('data-action');
+        var gaLabel = e.currentTarget.innerHTML;
+
+        ga('send', 'event', 'chat', 'option-selected', gaLabel);
 
         // the next thing we're doing, is removing the options. For this we don't want distinct delays on transitions anymore. We want it to be the option clicked, that leaves first.
         this.options.querySelector('.a-message--option--primary').classList.remove('a-message--option--primary');
