@@ -12,37 +12,37 @@
   transition: width 0.35s cubic-bezier(0.68, 0.01, 0.245, 1.13), 
               height 0.35s cubic-bezier(0.68, 0.01, 0.245, 1.13);
   word-wrap: break-word;
-}
 
-.a-message--sender {
-  background: $color-brand-casal;
-  color: $color-neutral-white;
-  transform: translate3d(+150%, 0, 0);
-}
-
-.a-message--recipient {
-  background:$color-neutral-very-light-grey;
-  color: $color-neutral-black;
-  transform: translate3d(-150%, 0, 0);
-}
-
-.a-message--option {
-  background: $color-brand-bayoux;
-  color: $color-neutral-white;
-  transform: translate3d(0, 100vh, 0);
-  transition: transform 0.8s cubic-bezier(0.68, 0.01, 0.245, 1.13);
-  width: 50%;
-
-  &:first-of-type {
-    margin-right: 12px;
+  &--sender {
+    background: $color-brand-casal;
+    color: $color-neutral-white;
+    transform: translate3d(+150%, 0, 0);
   }
 
-  &--primary {
-    transition-delay: 0.2s;
+  &--recipient {
+    background:$color-neutral-very-light-grey;
+    color: $color-neutral-black;
+    transform: translate3d(-150%, 0, 0);
   }
 
-  &--secondary {
-    animation-delay: 0.4s;
+  &--option {
+    background: $color-brand-bayoux;
+    color: $color-neutral-white;
+    transform: translate3d(0, 100vh, 0);
+    transition: transform 0.8s cubic-bezier(0.68, 0.01, 0.245, 1.13);
+    width: 50%;
+
+    &:first-of-type {
+      margin-right: 12px;
+    }
+
+    &--primary {
+      transition-delay: 0.2s;
+    }
+
+    &--secondary {
+      animation-delay: 0.4s;
+    }
   }
 }
 

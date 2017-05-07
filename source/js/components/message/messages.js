@@ -46,7 +46,7 @@ define(function () {
             "id": 6,
             "skipLoading": true,
             "isRecipient": true,
-            "message": "Fortsæt endelig!"
+            "message": "Fortæl, fortæl!"
         },
         {
             "id": 7,
@@ -88,6 +88,8 @@ define(function () {
             "id": 13,
             "skipLoading": false,
             "isRecipient": true,
+            "isCentered": true,
+            "isLarge": true,
             "message": " 😳"
         },
         {
