@@ -1,9 +1,9 @@
-define(['facade'], function ( facade ) {
-    var Message = function ( element ) {
+define(['facade'], function (facade) {
+    var Message = function (element) {
         this.element = element;
 
         this.message = this.element.getAttribute('data-message');
-        this.messageId = this.element.getAttribute('data-message-id');  
+        this.messageId = this.element.getAttribute('data-message-id');
         this.messageLength = this.message.length;
         this.options = this.element.getAttribute('data-options');
         this.skipLoading = this.element.getAttribute('data-skiploading');
@@ -17,18 +17,22 @@ define(['facade'], function ( facade ) {
     };
 
     Message.prototype.showLoading = function () {
+        var writingTime;
+
         if (this.skipLoading) {
             this.element.classList.add('a-message--incoming');
+
             this.scrollIntoView();
+
             facade.publish('message:sent:' + this.messageId);
-        }else{
+        } else {
             // let's provide some 'realistic' writing time
-            var writingTime = 900 + (10 * this.messageLength);
+            writingTime = 900 + (10 * this.messageLength);
 
             // let's bring it in, and have it shown as loading
             this.element.classList.add('a-message--incoming', 'a-message--loading');
             this.element.innerHTML = '<span></span> <span></span> <span></span>';
-            
+
             // and make sure it's visible on screen
             this.scrollIntoView();
 
@@ -44,7 +48,7 @@ define(['facade'], function ( facade ) {
 
         this.element.classList.remove('a-message--loading');
         this.element.innerHTML = '<div class="a-message__text--transparent">' + this.message + '</div>';
-        
+
         this.scrollIntoView();
 
         newDims = this.element.getBoundingClientRect();
@@ -57,10 +61,10 @@ define(['facade'], function ( facade ) {
             this.element.style.height = newDims.height + 'px';
 
             this.element.querySelector('.a-message__text--transparent').classList.add('a-message__text');
-            
+
             if (this.options) {
                 this.callForOptions();
-            }else{
+            } else {
                 this.releaseMe();
             }
         }.bind(this), 100);
@@ -70,13 +74,13 @@ define(['facade'], function ( facade ) {
         facade.publish('message:options', this.messageId, this);
     };
 
-    Message.prototype.releaseMe = function () {        
+    Message.prototype.releaseMe = function () {
         facade.publish('message:complete');
 
         facade.unsubscribe('message:incoming:' + this.messageId);
         facade.unsubscribe('message:sent:' + this.messageId);
 
-        setTimeout(function() {
+        setTimeout(function () {
             this.element.removeAttribute('style');
         }.bind(this), 200);
     };
@@ -85,6 +89,5 @@ define(['facade'], function ( facade ) {
         facade.publish('messenger:scroll', this.messageId);
     };
 
-  return Message;
-
+    return Message;
 });
