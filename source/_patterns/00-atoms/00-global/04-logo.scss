@@ -1,6 +1,6 @@
 .a-logo {
-    width: 40vw;
-    transform: translate(0, 30vh) scale(2);
+    width: 60vw;
+    transform: translate(0, 30vh) scale(1.5);
 }
 
 .a-logo--fit {
@@ -9,7 +9,7 @@
 
 @keyframes fitIntoHeader {
   from{
-    transform: translate(0, 30vh) scale(2);
+    transform: translate(0, 30vh) scale(1.5);
   }
   to{
     transform: translate(0, 0) scale(1);

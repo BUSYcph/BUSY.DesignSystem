@@ -64,7 +64,7 @@ define(function () {
             "id": 9,
             "skipLoading": false,
             "isRecipient": false,
-            "message": "Og om at formidle et brands særegne følelse og budskab."
+            "message": "Og om at formidle et brands særegne budskab og kernefortælling."
         },
         {
             "id": 10,
