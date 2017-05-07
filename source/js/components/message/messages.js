@@ -16,7 +16,7 @@ define(function () {
             "id": 3,
             "skipLoading": false,
             "isRecipient": false,
-            "message": "BUSY er specialister i helstøbte og værdifokuserede brugergrænseflader til web og apps"
+            "message": "BUSY specialicerer sig indenfor udvikling og rådgivning vedrørende brugergrænseflader til web og apps"
         },
         {
             "id": 4,
@@ -28,11 +28,11 @@ define(function () {
             "id": 5,
             "skipLoading": false,
             "isRecipient": false,
-            "message": "Ikke alene. Det har jeg en masse tanker om. Skal vi tage hul på dem her eller vil du læse om vores services?",
+            "message": "Ikke alene. Det har vi en masse tanker om. Skal vi tage hul på dem her eller vil du læse om vores services?",
             "options": [
                 {
                     "role": "primary",
-                    "message": "Fortsæt endelig!",
+                    "message": "Fortæl, fortæl!",
                     "action": "continue"
                 },
                 {

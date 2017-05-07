@@ -1,18 +1,37 @@
+.m-messenger {
+}
+
+.m-messenger__list-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
 .m-messenger__list {
   display: block;
   list-style: none;
   width: 100%;
   max-width: 100%;
-  height: 300px;
+  height: 50vh;
   padding: 0 12px;
   overflow: hidden;
+
+  @media only screen and (min-width: 768px) {
+    max-width: 50%;
+  }
 }
 
 .m-messenger__options {
+  cursor: pointer;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
-  padding: 0;
+  padding: 12px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .m-messenger__line {

@@ -1,11 +1,13 @@
-<div class="m-messenger" data-component="messenger">    
-    <ol class="m-messenger__list">
-        {{# messages }}
-        <li class="m-messenger__line m-messenger__line--auto-animate {{^ isRecipient }} t-text--right{{/ isRecipient }}">
-            {{> atoms-message:a-message--messenger }}     
-        </li>
-        {{/ messages }}
-    </ol>
+<div class="m-messenger" data-component="messenger">
+    <div class="m-messenger__list-wrapper">
+        <ol class="m-messenger__list">
+            {{# messages }}
+            <li class="m-messenger__line m-messenger__line--auto-animate {{^ isRecipient }} t-text--right{{/ isRecipient }}">
+                {{> atoms-message:a-message--messenger }}     
+            </li>
+            {{/ messages }}
+        </ol>
+    </div>
 
     <div class="m-messenger__options">
     </div>

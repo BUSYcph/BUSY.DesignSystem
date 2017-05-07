@@ -1,28 +1,35 @@
 define(function() {
     'use strict';
 
-    var FullScreen = function () {
+    var scrollDirection, hold, panels, self;
 
+    var FullScreen = function (element) {
+        self = this;
+
+        this.element = element;
+
+        panels = this.element.querySelectorAll('.full-screen-panel').length;
+        hold = false;
+        scrollDirection;
+
+        this.init();
     };
 
-    FullScreen.prototype.init = function (element) {
-        this.element = element;
-        this.panels = this.element.querySelectorAll('.full-screen-panel').length;
-        this.scrollDirection;
-
+    FullScreen.prototype.init = function () {
         this.element.style.transform = 'translateY(0)';
 
         this.element.addEventListener('wheel', function(e) {
             if (e.deltaY < 0) {
-                this.scrollDirection = 'down';
+                scrollDirection = 'down';
             }
             if (e.deltaY > 0) {
-                this.scrollDirection = 'up';
+                scrollDirection = 'up';
             }
             e.stopPropagation();
-        }.bind(this));
+        });
 
-        this.element.addEventListener('wheel', this.scrollY.bind(this));
+        this.element.addEventListener('wheel', this.scrollY);
+        
         this.swipe(this.element);
     };
 
@@ -30,29 +37,31 @@ define(function() {
         var slength, plength, pan, step = 100,
             vh = window.innerHeight / 100,
             vmin = Math.min(window.innerHeight, window.innerWidth) / 100;
-        if ((this !== undefined && this.id === 'well') || (obj !== undefined && obj.id === 'well')) {
+        
+        if ((this !== undefined && this.id === 'fullscreen') || (obj !== undefined && obj.id === 'fullscreen')) {
             pan = this || obj;
             plength = parseInt(pan.offsetHeight / vh, 10);
         }
         if (pan === undefined) {
             return;
         }
+
         plength = plength || parseInt(pan.offsetHeight / vmin, 10);
         slength = parseInt(pan.style.transform.replace('translateY(', ''), 10);
         
-        if (this.scrollDirection === 'up' && Math.abs(slength) < (plength - plength / this.panels)) {
+        if (scrollDirection === 'up' && Math.abs(slength) < (plength - plength / panels)) {
             slength = slength - step;
-        } else if (this.scrollDirection === 'down' && slength < 0) {
+        } else if (scrollDirection === 'down' && slength < 0) {
             slength = slength + step;
-        } else if (this.scrollDirection === 'top') {
+        } else if (scrollDirection === 'top') {
             slength = 0;
         }
-        if (this.hold === false) {
-            this.hold = true;
+        if (hold === false) {
+            hold = true;
             pan.style.transform = 'translateY(' + slength + 'vh)';
             setTimeout(function() {
-                this.hold = false;
-            }.bind(this), 1000);
+                hold = false;
+            }, 1000);
         }
     };
         
@@ -94,13 +103,13 @@ define(function() {
                 } else if (Math.abs(dY) >= threshold && Math.abs(dX) <= slack) {
                     swdir = (dY < 0) ? 'up' : 'down';
                 }
-                if (obj.id === 'well') {
+                if (obj.id === 'fullscreen') {
                     if (swdir === 'up') {
-                        this.scrollDirection = swdir;
-                        this.scrollY(obj);
+                        scrollDirection = swdir;
+                        self.scrollY(obj);
                     } else if (swdir === 'down' && obj.style.transform !== 'translateY(0)') {
-                        this.scrollDirection = swdir;
-                        this.scrollY(obj);
+                        scrollDirection = swdir;
+                        self.scrollY(obj);
 
                     }
                     e.stopPropagation();
