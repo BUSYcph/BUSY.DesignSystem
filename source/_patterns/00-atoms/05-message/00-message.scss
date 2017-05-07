@@ -44,6 +44,23 @@
       animation-delay: 0.4s;
     }
   }
+
+  &--large {
+    min-height: 60px;
+    
+    .a-message__text {
+      font-size: 36px;
+      line-height: 36px;
+      top: 7px;
+      position: relative;
+    }
+  }
+
+  &--centered {
+    .a-message__text {
+      text-align: center;
+    }
+  }
 }
 
 .a-message--option.a-message--incoming {

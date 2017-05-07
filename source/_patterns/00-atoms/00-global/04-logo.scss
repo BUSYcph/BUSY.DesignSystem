@@ -1,9 +1,15 @@
 .a-logo {
-    width: 60vw;
-    transform: translate(0, 30vh) scale(1.5);
+  width: 50%;
 }
 
 .a-logo--fit {
+  width: 60vw;
+  transform: translate(0, 30vh) scale(1.5);
+
+  @media only screen and (min-width: $screen-sm-min) {
+    width: 25vw;
+  }
+
   animation: fitIntoHeader 0.5s 2s 1 cubic-bezier(0.68,-0.37, 0.08, 1.11) both;
 }
 

@@ -16,7 +16,7 @@ define(function () {
             "id": 3,
             "skipLoading": false,
             "isRecipient": false,
-            "message": "BUSY specialicerer sig indenfor udvikling og rådgivning vedrørende brugergrænseflader til web og apps"
+            "message": "BUSY specialiserer sig indenfor udvikling og rådgivning vedrørende brugergrænseflader til web og apps"
         },
         {
             "id": 4,
@@ -96,13 +96,13 @@ define(function () {
             "id": 14,
             "skipLoading": false,
             "isRecipient": false,
-            "message": "Alt sammen væsentlige udfordringer der kræver specialistviden og erfaring at udføre i tilfredsstillende grad."
+            "message": "Ja... Alt sammen væsentlige udfordringer der kræver specialistviden og erfaring at udføre i tilfredsstillende grad."
         },
         {
             "id": 15,
             "skipLoading": false,
             "isRecipient": false,
-            "message": "Det er dét BUSY kan hjælpe dig og din forretning med 😘 🙌",
+            "message": "Men vær helt rolig! Det er dét BUSY kan hjælpe dig og din forretning med 😘 🙌",
             "options": [
                 {
                     "role": "primary",

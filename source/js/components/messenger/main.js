@@ -159,6 +159,15 @@ define(['facade', 'components/message/messages', 'polyfills/closest'], function 
         } else {
             messageHTML += ' a-message--sender';
         }
+
+        if (message.isCentered) {
+            messageHTML += ' a-message--centered';
+        }
+
+        if (message.isLarge) {
+            messageHTML += ' a-message--large';
+        }
+
         messageHTML += '" data-message="' + message.message + '" data-component="message" data-message-id="' + message.id + '"';
 
         if (hasOptions) {

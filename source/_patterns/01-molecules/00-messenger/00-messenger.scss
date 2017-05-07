@@ -7,6 +7,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
+
+  @media only screen and (min-width: $screen-sm-min) {
+    max-width: 40%;
+  }
 }
 
 .m-messenger__list {
@@ -17,10 +21,6 @@
   height: 50vh;
   padding: 0 12px;
   overflow: hidden;
-
-  @media only screen and (min-width: $screen-sm-min) {
-    max-width: 50%;
-  }
 }
 
 .m-messenger__options {
@@ -32,6 +32,12 @@
   position: absolute;
   bottom: 0;
   left: 0;
+
+  @media only screen and (min-width: $screen-sm-min) {
+    left: 50%;
+    transform: translate(-50%, 0);
+    max-width: 40%;
+  }
 }
 
 .m-messenger__line {

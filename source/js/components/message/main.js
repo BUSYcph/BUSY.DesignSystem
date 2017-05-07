@@ -65,7 +65,7 @@ define(['facade'], function (facade) {
             this.element.style.height = newDims.height + 'px';
 
             this.element.querySelector('.a-message__text--transparent').classList.add('a-message__text');
-            
+
             ga('send', 'event', 'chat', 'message-seen', this.message);
 
             if (this.options) {

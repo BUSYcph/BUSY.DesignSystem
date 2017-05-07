@@ -1,14 +1,27 @@
-{{> organisms-header:o-header--fixed }}
+<div data-component="fullscreen" class="full-screen__wrapper" id="fullscreen">
+    <section id="intro" class="full-screen__panel">
+        {{> organisms-header:o-header--fixed }}
 
-<div data-component="fullscreen" class="full-screen-wrapper" id="fullscreen">
-    <section id="intro" class="full-screen-panel">
         {{> molecules-messenger }}
     </section>
 
-    <section id="services"  class="full-screen-panel">
-    </section>
-
-    <section id="about" class="full-screen-panel">
+    <section id="contact" class="full-screen__panel">
+        <div class="half half--identity half--centered-v half--centered-h bg-sand">
+            {{> atoms-logo }}
+            
+            <p class="cvr">CVR 38581163</p>
+        </div>
+        <div class="half half--contact half--centered-v half--centered-h bg-casal">
+            <div itemscope itemtype="http://schema.org/ProfessionalService">
+                <p itemprop="name">BUSY ApS</p>
+                <div class="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <p itemprop="streetAddress">Vamdrupvej 71</p>
+                    <p><span itemprop="postalCode">2610</span> <span itemprop="addressLocality">Rødovre</span></p>
+                </div>
+                <h2 itemprop="telephone" content="+4530124205">30 12 42 05</h2>
+                <p><a itemprop="email" href="mailto:brian@busycph.dk">brian@busycph.dk</a></p>
+            </div>
+        </div>
     </section>
 </div>
 

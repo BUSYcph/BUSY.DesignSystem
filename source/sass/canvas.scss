@@ -1,48 +1,24 @@
-// .entrance {
-//   display: flex;
-//   flex-wrap: wrap;
-// }
+.bg-sand {
+  background: #ccc;
+}
 
-// .gridbox {
-//   padding: 1.5em 3em;
-// }
+.bg-casal {
+  background: $color-brand-casal;
+  color: $color-neutral-white;
+  
+  a {
+	  color: $color-neutral-white;
 
-// .gridbox--identity {
-//   position: relative;
-// }
+	  &:visited,
+	  &:active {
+		  color: $color-neutral-white;
+	  } 
 
-// .h-half {
-//   width: 50%;
-//   overflow: hidden;
-// }
-
-// .v-half {
-//   height: 50vh;
-//   overflow: hidden;
-// }
-// .bg-sand {
-//   background: #ccc;
-// }
-
-// .bg-casal {
-//   background: #305361;
-// }
-
-// .bg-bayoux {
-//   background: #4e737b;
-// }
-
-// .bg-lynch {
-//   background: #628190;
-// }
-
-// .bg-balihai {
-//   background: #89a3af;
-// }
-
-// .bg-yellow {
-//   background: #E7DFC6;
-// }
+	  &:hover {
+		  color: #E7DFC6;
+	  }
+  }
+}
 
 // full-screen
 body {
@@ -50,29 +26,94 @@ body {
   margin: 0;
 }
 
-.full-screen-wrapper {
+.full-screen__wrapper {
 	position: relative;
 	overflow: hidden;
 	transition: 0.5s cubic-bezier(0.68, 0.01, 0.245, 1.13);
 }
 
-.full-screen-panel {
+.full-screen__panel {
 	position: relative;
 	height: 100vh;
 	overflow: hidden;
-	padding: 1em;
+	padding: 0;
 	box-sizing: border-box;
 	cursor: default;
 }
 
-.full-screen-panel:nth-child(1) {
+.full-screen__panel:nth-child(1) {
 	background: darken($color-neutral-white, 5%);
 }
 
-.full-screen-panel:nth-child(2) {
+.full-screen__panel:nth-child(2) {
 	background: darken($color-neutral-white, 10%);
 }
 
-.full-screen-panel:nth-child(3) {
+.full-screen__panel:nth-child(3) {
 	background: darken($color-neutral-white, 20%);
+}
+
+#contact {
+	display: flex;
+	flex-direction: column;
+	@media only screen and (min-width: $screen-xs-min) {
+		flex-direction: row;
+	}
+}
+
+.half {
+	width: 100vw;
+	height: 50vh;
+  	overflow: hidden;
+
+	@media only screen and (min-width: $screen-xs-min) {
+		width: 50vw;
+		height: 100vh;
+	}
+}
+
+.half--contact {
+	order: 1;
+	@media only screen and (min-width: $screen-xs-min) {
+		order: 2;
+	}
+
+	p, h2 {
+		margin: 0;
+	}
+
+	h2 {
+		font-size: 30px;
+	}
+}
+
+.half--identity {
+	order: 2;
+	position: relative;
+
+	@media only screen and (min-width: $screen-xs-min) {
+		order: 1;
+	}
+
+	.a-logo {
+		position: absolute;
+		left: 50%;
+    	transform: translate(-50%, 0);
+	}
+
+	.cvr {
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, 500%);
+	}
+}
+
+.half--centered-v {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.half--centered-h {
+	text-align: center;
 }
