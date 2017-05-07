@@ -43,3 +43,31 @@
 .bg-yellow {
   background: #E7DFC6;
 }
+
+// full-screen
+
+
+.full-screen-wrapper {
+	position: relative;
+	overflow: hidden;
+	transition: 0.5s cubic-bezier(0.68, 0.01, 0.245, 1.13);
+}
+
+.full-screen-panel {
+	position: relative;
+	height: 100vh;
+	overflow: hidden;
+	font-size: 10vmin;
+	padding: 1em;
+	box-sizing: border-box;
+	color: hsla(0, 0%, 100%, .1);
+	cursor: default;
+}
+
+.full-screen-panelpanel:nth-child(1) {
+	background: #012345;
+}
+
+.full-screen-panel:nth-child(2) {
+	background: #123456;
+}
